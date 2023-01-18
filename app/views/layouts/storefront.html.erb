@@ -16,10 +16,12 @@
   </head>
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>">
     <%= render 'layouts/header', taxons: @taxons, taxon: @taxon %>
+    
     <%= flash_messages %>
     <%= render BreadcrumbsComponent.new(@taxon) %>
     <main>
       <%= yield %>
+      <%= render 'layouts/sidebar', taxons: @taxons, taxon: @taxon %>
     </main>
     <%= yield :templates %>
     <%= render 'layouts/footer' %>

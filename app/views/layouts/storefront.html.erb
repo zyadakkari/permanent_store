@@ -10,20 +10,85 @@
 
     <%= javascript_include_tag 'solidus_starter_frontend' %>
     <%= stylesheet_link_tag 'solidus_starter_frontend', media: 'screen' %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%#= javascript_include_tag 'homepage/storefront' %>
 
     <%= favicon_link_tag 'favicon.ico' %>
+
     <%= yield :head %>
   </head>
-  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>">
-    <%= render 'layouts/header', taxons: @taxons, taxon: @taxon %>
-    
-    <%= flash_messages %>
-    <%= render BreadcrumbsComponent.new(@taxon) %>
-    <main>
-      <%= yield %>
+  <body>
+
+  <div class="storefront-container">
+    <div class="sidebar">
       <%= render 'layouts/sidebar', taxons: @taxons, taxon: @taxon %>
-    </main>
-    <%= yield :templates %>
-    <%= render 'layouts/footer' %>
+    </div>
+    <div class="storefront-content">
+      <div class="top-bar">
+        <%= render 'layouts/top_bar' %>
+      </div>
+      <div class ="document-center">
+        <div class="carousel-container">
+          <div class="carousel" id="carousel-1" auto-scroll="7000">
+            <section class="carousel-screen">
+              <%= image_tag 'spree/frontend/homepage_campaigns/slide1.jpg', alt: 'slide-1', class: 'carousel-img' %>
+              <section class="text-container">
+                <p>INTRODUCING - HOPE HAIR TIE MADE FROM THOMAS MASON COTTON</p>
+              </section>
+            </section>
+            <section class="carousel-screen">
+              <%= image_tag 'spree/frontend/homepage_campaigns/slide2.jpg', alt: 'slide-2', class: 'carousel-img' %>
+              <section class="text-container">
+                <p>RE-STOCK SALMA JEANS</p>
+              </section>
+            </section>
+            <section class="carousel-screen">
+              <%= image_tag 'spree/frontend/homepage_campaigns/slide3.jpg', alt: 'slide-3', class: 'carousel-img' %>
+              <section class="text-container">
+                <p>NEW ARRIVALS - THE PERFECT SUMMER DRESS</p>
+              </section>
+            </section>
+            <section class="circle-container">
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </section>
+            <div class="up-arrow">
+              <span class="chevron up"></span>
+            </div>
+            <div class="down-arrow">
+              <span class="chevron down"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script 
+      <div class="category-navigation">
+        <div class="categories">
+          <nav class="categories
+        </div>
+      </div>
+      <%#= flash_messages %>
+      <%#= render BreadcrumbsComponent.new(@taxon) %>
+      <main>
+        <%#= yield %>
+        
+      </main>
+      <%#= yield :templates %>
+    </div>
+
+
+  </div>
+  
   </body>
+  <%= render 'layouts/footer' %>
+
+
+
+
+  <body class="<%#= body_class %>" id="<%#= @body_id || 'default' %>">
+    
+    
+  </body>
+  
 </html>

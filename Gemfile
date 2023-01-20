@@ -93,3 +93,9 @@ end
 gem 'solidus_auth_devise' unless File.read(__FILE__).lines[__LINE__..-1].grep(/solidus_auth_devise/).any?
 
 gem "solidus_paypal_commerce_platform", ">= 1.a"
+
+gem "bootstrap", "~> 5.2"
+
+gem "tailwindcss-rails", "~> 2.0"
+
+gem 'jquery-rails', '~> 4.4.0'

@@ -1,26 +1,19 @@
 .top-bar {
-  align-items: center;
+  // align-items: center;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
   padding: 2rem 3rem;
+  position: fixed;
+  width: 100%;
+
 
   @include desktop {
     flex-wrap: nowrap;
     justify-content: flex-end;
   }
 
-  .logo {
-    order: 1;
-
-    a {
-      display: flex;
-    }
-
-    img {
-      width: 125px;
-    }
-  }
+  
 
   &__search {
     flex: 0 0 100%;
@@ -33,12 +26,26 @@
       order: 2;
     }
   }
+.top-logo {
+  width: auto;
+  flex: auto;
+  justify-content: center;
+  display: flex;
 
-  .auth-link {
-    order: 2;
-  }
+  
+}
+ 
+}
+a.top-logo {
+  width: auto;
+  flex: auto;
+  justify-content: center;
+  font-weight: 900;
 
-  .cart-link {
-    order: 3;
-  }
+  
+}
+
+.cart-link {
+  flex: auto;
+  justify-content: flex-end;
 }

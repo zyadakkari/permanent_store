@@ -1,0 +1,85 @@
+<% javascript_include_tag 'spree/frontend/homepage/sidebar' %>
+<nav class="sidebar-nav">
+<ul class="nav flex-column sidebar-all">
+  <li class="nav-item-sidebar sidebar-search">
+    <div class="top-bar__search">
+      <%= render 'shared/search/search_bar', taxons: taxons, taxon: taxon %>
+    </div>
+  </li>
+  <li class="nav-item-sidebar sidebar-shop">
+    <a href="#">SHOP</a>
+    <ul class="sidebar-shop-left">
+      <li class="sidebar-shop-all-item">
+        <%= link_to 'New Arrivals', products_path %>
+      </li>
+      <li class="sidebar-shop-all-item">
+        <%= link_to 'Coveted Pieces', products_path %>
+      </li>
+      <li class="sidebar-shop-all-item">
+        <%= link_to 'All Products', products_path %>
+      </li>
+      <li class="sidebar-shop-all-item">
+        <%= link_to 'Coats', products_path %>
+      </li>
+      <li class="sidebar-shop-all-item">
+        <%= link_to 'Jackets', products_path %>
+      </li>
+      <li class="sidebar-shop-all-item">
+        <%= link_to 'Dresses', products_path %>
+      </li>
+      <li class="sidebar-shop-all-item">
+        <%= link_to 'Tops', products_path %>
+      </li>
+      <li class="sidebar-shop-all-item">
+        <%= link_to 'Pants', products_path %>
+      </li>
+      <li class="sidebar-shop-all-item">
+        <%= link_to 'Skirts', products_path %>
+      </li>
+      <li class="sidebar-shop-all-item">
+        <%= link_to 'Watches', products_path %>
+      </li>
+      <li class="sidebar-shop-all-item">
+        <%= link_to 'Bags', products_path %>
+      </li>
+      <li class="sidebar-shop-all-item">
+        <%= link_to 'Shoes', products_path %>
+      </li>
+    </ul>
+  </li>
+  <li class="nav-item-sidebar sidebar-obsessions">
+    <a href="#">OBSESSIONS</a>
+  </li>
+  <li class="nav-item-sidebar sidebar-brand">
+    <a href="#">ABOUT PERMANENCE</a>
+      <ul sidebar-brand-all>
+        <li class="sidebar-brand-all-item">
+          <a href="#">Code of conduct</a>
+        </li>
+        <li class="sidebar-brand-all-item">
+          <a href="#">Press</a>
+        </li>
+      </ul>
+  </li>
+  <li class="nav-item-sidebar sidebar-customer-service">
+    <a href="#">CUSTOMER SERVICE</a>
+      <ul class="sidebar-customer-service-all">
+        <li class="sidebar-customer-service-all-item">
+          <a href="#">Frequently Asked Questions</a>
+        </li>
+        <li class="sidebar-customer-service-all-item">
+          <a href="#">Shipping Information</a>
+        </li>
+        <li class="sidebar-customer-service-all-item">
+          <a href="#">Terms & Conditions</a>
+        </li>
+        <li class="sidebar-customer-service-all-item">
+          <a href="#">Newsletter</a>
+        </li>
+        <li class="sidebar-customer-service-all-item">
+          <a href="#">Privacy Policy</a>
+        </li>
+      </ul>
+  </li>
+</ul>
+</nav>

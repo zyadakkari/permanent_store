@@ -1,17 +1,15 @@
 <div class="top-bar">
-  <figure class="logo">
-    <%= link_to "permanent", root_path %>
+  <figure class="top-logo">
+    <%= link_to "PERMANENCE", root_path, class: 'top-logo' %>
   </figure>
 
-  <div class="top-bar__search">
-    <%= render 'shared/search/search_bar', taxons: taxons, taxon: taxon %>
-  </div>
+  
 
-  <% if spree_current_user %>
-    <%= link_to I18n.t('spree.my_account'), account_path, class: 'auth-link' %>
-  <% else %>
-    <%= link_to I18n.t('spree.login'), login_path, class: 'auth-link' %>
-  <% end %>
+  <%# if spree_current_user %>
+    <%#= link_to I18n.t('spree.my_account'), account_path, class: 'auth-link' %>
+  <%# else %>
+    <%#= link_to I18n.t('spree.login'), login_path, class: 'auth-link' %>
+  <%# end %>
 
   <div class="cart-link" id="link-to-cart">
     <noscript>

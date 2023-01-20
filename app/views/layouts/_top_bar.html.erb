@@ -1,19 +1,17 @@
-<div class="top-bar">
-  <figure class="top-logo">
-    <%= link_to "PERMANENCE", root_path, class: 'top-logo' %>
-  </figure>
-
-  
-
-  <%# if spree_current_user %>
-    <%#= link_to I18n.t('spree.my_account'), account_path, class: 'auth-link' %>
-  <%# else %>
-    <%#= link_to I18n.t('spree.login'), login_path, class: 'auth-link' %>
-  <%# end %>
+<div class="header-top-bar">
+  <div class="menu">
+    <div class="menu--sandwich" style="opacity: 1; transform: none;">
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <div class="top-logo">
+    <%= link_to "PERMANENCE", root_path, class: 'logo--link' %>
+  </div>
 
   <div class="cart-link" id="link-to-cart">
     <noscript>
-      <%= link_to t('spree.cart'), edit_cart_path %>
+      <%= link_to "Bag", edit_cart_path, class: "cart" %>
     </noscript>
   </div>
 
@@ -21,3 +19,12 @@
     Solidus.fetch_cart('<%= j cart_link_path %>')
   </script>
 </div>
+
+
+
+
+<%# if spree_current_user %>
+    <%#= link_to I18n.t('spree.my_account'), account_path, class: 'auth-link' %>
+  <%# else %>
+    <%#= link_to I18n.t('spree.login'), login_path, class: 'auth-link' %>
+  <%# end %>

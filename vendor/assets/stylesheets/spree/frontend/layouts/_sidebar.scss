@@ -3,9 +3,92 @@ a {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-nav.sidebar-nav ul {
-    margin-left: 0;
-    padding-left: 0;
+@media (min-width: 940px) {
+    .top-bar--search {
+        display: block;
+    }
+}
+
+.top-bar--search {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+@media (min-width: 940px) {
+    .search-field {
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 20px;
+        color: var(--dimmed);
+}
+}
+
+.search-field {
+    top: 0;
+    left: 0;
+}
+
+.search-field input {
+    border-color: transparent;
+}
+
+input#keywords.search-bar__input {
+    display: inline-block;
+    border-radius: 0;
+    border-bottom-width: 1px;
+    border-color: var(--dimmed);
+    --tw-bg-opacity: 1;
+    background-color: rgba(255,255,255,var(--tw-bg-opacity));
+    padding-bottom: 5px;
+    --tw-text-opacity: 1;
+    color: rgba(0,0,0,var(--tw-text-opacity));
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    transition: all .4s var(--ease-out-expo);
+}
+
+.sidebar-nav>ul {
+    width: 100%;
+}
+
+.sidebar--desktop {
+    margin: 50px 0 70px;
+    letter-spacing: .05em;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 940px) {
+    .sidebar--desktop {
+        display: block!important;
+    }
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.sidebar-nav>ul span {
+    display: block;
+    cursor: pointer;
+    color: var(--dimmed);
+    transition: color .2s var(--ease-out-expo);
+}
+
+@media (min-width: 940px) {
+    .sidebar--title {
+        margin-bottom: 40px;
+        color: var(--dimmed);
+    }
 }
 
 nav.sidebar-nav ul li {

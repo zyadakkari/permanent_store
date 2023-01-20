@@ -1,45 +1,110 @@
 * {
-  // margin: 0;
-  // padding: 0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
 
-.top-bar {
-  z-index: 10;
+
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 120;
+  height: 0;
+  width: 100%;
+  display: block;
 }
 
 .storefront-container {
   min-height: 100vh;
+  display: flex;
+  position: relative;
+
 }
 
 .sidebar {
   position: fixed;
-  width: 325px;
+  top: 0;
+  z-index: 110;
+  display: block;
+  width: 100%;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+
+@media (min-width: 940px) {
+.sidebar {
+  display: flex;
+  height: 100vh;
+  position: sticky;
+  flex-shrink: 0;
+  width: var(--w-sidebar);
   overflow-y: scroll;
+  align-items: center;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
   top: 0;
   bottom: 0;
   z-index: 3;
 }
+}
+
+@media (max-width: 940px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+.storefront-content {
+  display: block;
+}
+@media (min-width: 940px) {
+  .storefront-content {
+    width: calc(100% - var(--w-sidebar));
+  }
+}
 
 .storefront-content {
   position: relative;
-  margin-left: 325px;
+  // margin-left: 325px;
   z-index: 1;
 }
 
-.carousel-screen{
-  // display: grid;
+.document-center {
+  overflow-y: scroll;
   height: 100vh;
-  // object-fit: contain;
+  
 }
 
-img {
-  // max-width: 100%;
-  // max-height: 100%;
-  // margin: auto;
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+
+.carousel--slides {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  touch-action: pan-y;
+  will-change: transform;
+}
+
+.carousel-screen{
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  text-align: right;
+}
+
+img.carousel-img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
   // z-index: 2;
-  // object-fit: scale-down;
   
 }
 
@@ -59,138 +124,131 @@ img {
 }
 
 
-// .document-center {
-//   position: absolute;
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
+
 
 // /*We do this because the carousel needs to be 100% width 
 // in order for the aspect ratio trick to work*/
-// .carousel-container {
-//   max-width: 980px;
-//   width: 95%;
-// }
+.carousel-container {
+  max-width: 980px;
+  width: 95%;
+}
 
 // /*This is the actual carousel. Overflow hidden acts as a mask*/
 
-// .carousel {
-//   position: relative;
-//   width: 100%;
-//   /*Width of image is 980px. Height is 570px.*/
-//   padding-top: calc(570 / 980 * 100%);
-//   overflow: hidden;
-// }
+.carousel {
+  position: relative;
+  width: 100%;
+  /*Width of image is 980px. Height is 570px.*/
+  // padding-top: calc(570 / 980 * 100%);
+  overflow: hidden;
+}
 
-// .carousel-container img {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-// }
+.carousel-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-// .down-arrow {
-//   position: absolute;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   top: 0;
-//   left: 0;
-//   height: 100%;
-//   width: 147px;
-//   cursor: pointer;
-// }
+.down-arrow {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 147px;
+  cursor: pointer;
+}
 
-// .down-arrow:hover {
-//   background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
-// }
+.down-arrow:hover {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+}
 
-// .down-arrow:hover .chevron,
-// .up-arrow:hover .chevron {
-//   border-color: #e6e6e6;
-// }
+.down-arrow:hover .chevron,
+.up-arrow:hover .chevron {
+  border-color: #e6e6e6;
+}
 
-// .up-arrow {
-//   position: absolute;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   top: 0;
-//   right: 0;
-//   height: 100%;
-//   width: 147px;
-//   cursor: pointer;
-// }
+.up-arrow {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 147px;
+  cursor: pointer;
+}
 
-// .up-arrow:hover {
-//   background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
-// }
+.up-arrow:hover {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+}
 
-// .chevron {
-//   width: 25px;
-//   height: 25px;
-//   border: solid rgba(255, 255, 255, 0.5);
-//   border-width: 10px 10px 0 0;
-// }
+.chevron {
+  width: 25px;
+  height: 25px;
+  border: solid rgba(255, 255, 255, 0.5);
+  border-width: 10px 10px 0 0;
+}
 
-// .chevron.up {
-//   transform: rotate(45deg);
-// }
+.chevron.up {
+  transform: rotate(45deg);
+}
 
-// .chevron.down {
-//   transform: rotate(-135deg);
-// }
+.chevron.down {
+  transform: rotate(-135deg);
+}
 
-// .circle-container {
-//   position: absolute;
-//   display: flex;
-//   justify-content: center;
-//   align-items: start;
-//   bottom: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 45px;
-// }
+.circle-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+}
 
-// .circle {
-//   border: 1px solid white;
-//   width: 12px;
-//   height: 12px;
-//   border-radius: 50%;
-//   margin: 0 5px;
-//   cursor: pointer;
-// }
+.circle {
+  border: 1px solid white;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
 
-// .circle-fill {
-//   background-color: white;
-// }
+.circle-fill {
+  background-color: white;
+}
 
-// .text-container {
-//   position: absolute;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: start;
-//   align-items: center;
-//   bottom: 45px;
-//   left: 0;
-//   width: 100%;
-//   color: white;
-//   text-shadow: 1px 1px black;
-//   text-align: center;
-// }
+.text-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  bottom: 45px;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-shadow: 1px 1px black;
+  text-align: center;
+}
 
-// .text-container p:nth-child(1) {
-//   margin: 10px 100px;
-//   font-size: 1.5em;
-// }
+.text-container p:nth-child(1) {
+  margin: 10px 100px;
+  font-size: 1.5em;
+}
 
-// .text-container p:nth-child(2) {
-//   margin: 10px 100px 20px 100px;
-// }
+.text-container p:nth-child(2) {
+  margin: 10px 100px 20px 100px;
+}
 
 // .carousel-screen {
 //   position: absolute;

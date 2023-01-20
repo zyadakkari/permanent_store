@@ -13,14 +13,14 @@
 
 <%= form_tag products_path, class: class_names, method: :get do %>
   <% cache [I18n.locale, taxons] do %>
-    <%= select_tag(
+    <%#= select_tag(
       :taxon,
       options_for_select(options, selected),
       class: "#{base_class}__select"
     ) %>
   <% end %>
-
-  <%= search_field_tag 'keywords', nil, placeholder: 'Search', class: "#{base_class}__input" %>
-
+  
+    <%= search_field_tag 'keywords', nil, placeholder: 'Search', class: "#{base_class}__input" %>
+  
   
 <% end %>

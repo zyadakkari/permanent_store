@@ -6,3 +6,13 @@
  *= require_self
  *= require_tree .
 */
+@import 'bootstrap';
+
+:root {
+    --px-md: 10px;
+    --w-sidebar: 395px;
+    --dimmed: #cfcfcf;
+    --ease-out-expo: cubic-bezier(0.16,1,0.3,1);
+  }
+
+ 

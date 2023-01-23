@@ -8,9 +8,10 @@
     <%= canonical_tag(current_store.url) %>
     <%= csrf_meta_tags %>
 
-    <%= javascript_include_tag 'solidus_starter_frontend' %>
+    <%#= javascript_include_tag 'solidus_starter_frontend' %>
     <%#= stylesheet_link_tag 'solidus_starter_frontend', media: 'screen' %>
     <%= stylesheet_link_tag 'spree/frontend/all.css' %>
+    <%= javascript_include_tag 'spree/frontend/all.js' %>
     <%#= javascript_include_tag 'homepage/storefront' %>
 
     <%= favicon_link_tag 'favicon.ico' %>
@@ -18,68 +19,36 @@
     <%= yield :head %>
   </head>
   <body>
-  <header class="header" style="opacity: 1;">
-    <%= render 'layouts/top_bar' %>
-  </header>
-  <div class="storefront-container">
-    <div class="sidebar">
-      <%= render 'layouts/sidebar', taxons: @taxons, taxon: @taxon %>
-    </div>
-    <div class="storefront-content" style="opacity: 1; transform: translateY(0px) translateZ(0px);">
+    <div class="root">
+      <div class="header" style="opacity: 1;">
+        <%= render 'layouts/top_bar' %>
+      </div>
+    <div class="storefront-container">
       
-      <div class ="document-center">
-        <div class="carousel-container">
-          <div class="carousel--slides" id="carousel-1" auto-scroll="7000">
-            <div class="carousel-screen">
-              <%= image_tag 'spree/frontend/homepage_campaigns/slide1.jpg', alt: 'slide-1', class: 'carousel-img' %>
-              <div class="text-container">
-                <p>INTRODUCING - HOPE HAIR TIE MADE FROM THOMAS MASON COTTON</p>
-              </div>
-            </div>
-            <div class="carousel-screen">
-              <%= image_tag 'spree/frontend/homepage_campaigns/slide2.jpg', alt: 'slide-2', class: 'carousel-img' %>
-              <div class="text-container">
-                <p>RE-STOCK SALMA JEANS</p>
-              </div>
-            </div>
-            <div class="carousel-screen">
-              <%= image_tag 'spree/frontend/homepage_campaigns/slide3.jpg', alt: 'slide-3', class: 'carousel-img' %>
-              <div class="text-container">
-                <p>NEW ARRIVALS - THE PERFECT SUMMER DRESS</p>
-              </div>
-            </div>
-            <div class="circle-container">
-              <div class="circle"></div>
-              <div class="circle"></div>
-              <div class="circle"></div>
-            </div>
-            <div class="up-arrow">
-              <span class="chevron up"></span>
-            </div>
-            <div class="down-arrow">
-              <span class="chevron down"></span>
-            </div>
-          </div>
-        </div>
+      <div class="sidebar-container">
+        <%= render 'layouts/sidebar', taxons: @taxons, taxon: @taxon %>
+      </div>
+      <div class="storefront-content">
+        <%= render 'home/hero' %>  
       </div>
       <script 
-      <div class="category-navigation">
-        <div class="categories">
-          <nav class="categories
+        <div class="category-navigation">
+          <div class="categories">
+            <nav class="categories
+          </div>
         </div>
+        <%#= flash_messages %>
+        <%#= render BreadcrumbsComponent.new(@taxon) %>
+        <main>
+          <%#= yield %>
+          
+        </main>
+        <%#= yield :templates %>
       </div>
-      <%#= flash_messages %>
-      <%#= render BreadcrumbsComponent.new(@taxon) %>
-      <main>
-        <%#= yield %>
-        
-      </main>
-      <%#= yield :templates %>
+
+
     </div>
-
-
   </div>
-  
   </body>
   <%= render 'layouts/footer' %>
 

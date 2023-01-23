@@ -8,51 +8,63 @@
   <ul class="sidebar--desktop" style="opacity: 1;">
     <li class="nav-item-sidebar sidebar-shop">
       <span class="sidebar--title">Shop</span>
-      <ul class="sidebar-shop-left">
-        <li class="sidebar-shop-all-item">
-          <%= link_to 'New Arrivals', products_path %>
-        </li>
-        <li class="sidebar-shop-all-item">
-          <%= link_to 'Coveted Pieces', products_path %>
-        </li>
-        <li class="sidebar-shop-all-item">
-          <%= link_to 'All Products', products_path %>
-        </li>
-        <li class="sidebar-shop-all-item">
-          <%= link_to 'Coats', products_path %>
-        </li>
-        <li class="sidebar-shop-all-item">
-          <%= link_to 'Jackets', products_path %>
-        </li>
-        <li class="sidebar-shop-all-item">
-          <%= link_to 'Dresses', products_path %>
-        </li>
-        <li class="sidebar-shop-all-item">
-          <%= link_to 'Tops', products_path %>
-        </li>
-        <li class="sidebar-shop-all-item">
-          <%= link_to 'Pants', products_path %>
-        </li>
-        <li class="sidebar-shop-all-item">
-          <%= link_to 'Skirts', products_path %>
-        </li>
-        <li class="sidebar-shop-all-item">
-          <%= link_to 'Watches', products_path %>
-        </li>
-        <li class="sidebar-shop-all-item">
-          <%= link_to 'Bags', products_path %>
-        </li>
-        <li class="sidebar-shop-all-item">
-          <%= link_to 'Shoes', products_path %>
-        </li>
-      </ul>
+      <div class="sidebar--items" style="opacity: 0; height: 0px;">
+        <ul class="sidebar-shop-left">
+          <li class="sidebar-shop-all-item">
+            <%= link_to 'New Arrivals', products_path %>
+          </li>
+          <li class="sidebar-shop-all-item">
+            <%= link_to 'Coveted Pieces', products_path %>
+          </li>
+        </ul>
+        <div class="sidebar--categories">
+          <ul>
+            <li class="sidebar-shop-all-item">
+              <%= link_to 'All Products', products_path %>
+            </li>
+            <li class="sidebar-shop-all-item">
+              <%= link_to 'Coats', products_path %>
+            </li>
+            <li class="sidebar-shop-all-item">
+              <%= link_to 'Jackets', products_path %>
+            </li>
+            <li class="sidebar-shop-all-item">
+              <%= link_to 'Dresses', products_path %>
+            </li>
+            <li class="sidebar-shop-all-item">
+              <%= link_to 'Tops', products_path %>
+            </li>
+            <li class="sidebar-shop-all-item">
+              <%= link_to 'Pants', products_path %>
+            </li>
+          </ul>
+          <ul>
+            <li class="sidebar-shop-all-item">
+              <%= link_to 'Skirts', products_path %>
+            </li>
+            <li class="sidebar-shop-all-item">
+              <%= link_to 'Watches', products_path %>
+            </li>
+            <li class="sidebar-shop-all-item">
+              <%= link_to 'Bags', products_path %>
+            </li>
+            <li class="sidebar-shop-all-item">
+              <%= link_to 'Shoes', products_path %>
+            </li>
+          </ul>
+        </div>
+      </div>
     </li>
     <li class="nav-item-sidebar sidebar-obsessions">
-      <span class="sidebar--title">OBSESSIONS</span>
+      <a class="sidebar--title">Obsessions</a>
     </li>
     <li class="nav-item-sidebar sidebar-brand">
-      <span class="sidebar--title">ABOUT PERMANENCE</span>
-        <ul sidebar-brand-all>
+      <span class="sidebar--title">Brand</span>
+      <div class="sidebar--items" style="opacity: 0; height: 0px;">
+        <ul class="sidebar-brand-all">
+          <li class="sidebar-brand-all-item">
+            <a href="#">About Permanence</a>
+          </li>
           <li class="sidebar-brand-all-item">
             <a href="#">Code of conduct</a>
           </li>
@@ -60,9 +72,11 @@
             <a href="#">Press</a>
           </li>
         </ul>
+      </div>
     </li>
     <li class="nav-item-sidebar sidebar-customer-service">
-      <span class="sidebar--title">CUSTOMER SERVICE</span>
+      <span class="sidebar--title">Customer service</span>
+      <div class="sidebar--items" style="opacity: 0; height: 0px;">
         <ul class="sidebar-customer-service-all">
           <li class="sidebar-customer-service-all-item">
             <a href="#">Frequently Asked Questions</a>
@@ -80,6 +94,7 @@
             <a href="#">Privacy Policy</a>
           </li>
         </ul>
+      </div>
     </li>
   </ul>
 </nav>

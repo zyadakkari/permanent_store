@@ -1,16 +1,34 @@
-<section class="hero">
-  <div class="hero__container">
-    <div class="hero__message">
-      <h1 class="hero-title">
-        The only eCommerce platform you’ll ever need.
-      </h1>
-
-      <p class="subtitle">
-        Build, customize and scale your store with no limits or license fees.
-        Solidus is the free, open-source eCommerce framework for
-        digitally-native brands, fast-growing online businesses and pragmatic
-        developers.
-      </p>
+<%= javascript_include_tag 'spree/frontend/homepage/carousel.js' %>
+<div class ="document-center">
+<div class="carousel-container">
+  <div class="carousel--slides">
+    <div class="carousel-screen fade">
+      <%= image_tag 'spree/frontend/homepage_campaigns/slide1.jpg', alt: 'slide-1', class: 'carousel-img' %>
+      <div class="text-container">
+        <p>INTRODUCING - HOPE HAIR TIE MADE FROM THOMAS MASON COTTON</p>
+      </div>
     </div>
+    <div class="carousel-screen fade">
+      <%= image_tag 'spree/frontend/homepage_campaigns/slide2.jpg', alt: 'slide-2', class: 'carousel-img' %>
+      <div class="text-container">
+        <p>RE-STOCK SALMA JEANS</p>
+      </div>
+    </div>
+    <div class="carousel-screen fade">
+      <%= image_tag 'spree/frontend/homepage_campaigns/slide3.jpg', alt: 'slide-3', class: 'carousel-img' %>
+      <div class="text-container">
+        <p>NEW ARRIVALS - THE PERFECT SUMMER DRESS</p>
+      </div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#65087;</a>
+    <a class="next" onclick="plusSlides(1)">&#65088;</a>
   </div>
-</section>
+  <br>
+  <div class="circle-container" style="text-align:right;">
+    <span class="circle" onclick="currentSlide(1)"></span>
+    <span class="circle" onclick="currentSlide(2)"></span>
+    <span class="circle" onclick="currentSlide(3)"></span>
+  </div>
+</div>
+</div>

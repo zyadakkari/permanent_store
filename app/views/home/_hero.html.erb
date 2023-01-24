@@ -1,21 +1,21 @@
-<%= javascript_include_tag 'spree/frontend/homepage/carousel.js' %>
+
 <div class ="document-center">
 <div class="carousel-container">
   <div class="carousel--slides">
-    <div class="carousel-screen fade">
-      <%= image_tag 'spree/frontend/homepage_campaigns/slide1.jpg', alt: 'slide-1', class: 'carousel-img' %>
+    <div class="carousel-screen" style="display: block;">
+      <%= image_tag 'spree/frontend/homepage_campaigns/small.jpg', alt: 'slide-1', class: 'carousel-img' %>
       <div class="text-container">
         <p>INTRODUCING - HOPE HAIR TIE MADE FROM THOMAS MASON COTTON</p>
       </div>
     </div>
-    <div class="carousel-screen fade">
-      <%= image_tag 'spree/frontend/homepage_campaigns/slide2.jpg', alt: 'slide-2', class: 'carousel-img' %>
+    <div class="carousel-screen">
+      <%= image_tag 'spree/frontend/homepage_campaigns/small2.jpg', alt: 'slide-2', class: 'carousel-img' %>
       <div class="text-container">
         <p>RE-STOCK SALMA JEANS</p>
       </div>
     </div>
-    <div class="carousel-screen fade">
-      <%= image_tag 'spree/frontend/homepage_campaigns/slide3.jpg', alt: 'slide-3', class: 'carousel-img' %>
+    <div class="carousel-screen">
+      <%= image_tag 'spree/frontend/homepage_campaigns/small.jpg', alt: 'slide-3', class: 'carousel-img' %>
       <div class="text-container">
         <p>NEW ARRIVALS - THE PERFECT SUMMER DRESS</p>
       </div>
@@ -26,9 +26,10 @@
   </div>
   <br>
   <div class="circle-container" style="text-align:right;">
+    <span class="circle" onclick="currentSlide(0)"></span>
     <span class="circle" onclick="currentSlide(1)"></span>
     <span class="circle" onclick="currentSlide(2)"></span>
-    <span class="circle" onclick="currentSlide(3)"></span>
   </div>
 </div>
+<%= javascript_include_tag 'spree/frontend/homepage/carousel.js' %>
 </div>

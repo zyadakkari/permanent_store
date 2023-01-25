@@ -20,7 +20,14 @@
 }
 }
 
-@media (min-width: 940px) { .menu-sandwich {
+@media (max-width: 940px) { .menu-close {
+    display: none;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+}
+
+@media (min-width: 940px) { .menu-sandwich, .menu-close {
     display: none;
 }
 }
@@ -29,7 +36,13 @@ div.top-logo {
     grid-column-start: 2;
     grid-column-end: 3;
     display: flex;
-    justify-content: center;    
+    justify-content: center;
+    object-fit: contain;
+}
+
+.image_size {
+    height: 13px;
+    width: 156px;
 }
 
 a, a:hover, a:active, a:visited, a:focus {

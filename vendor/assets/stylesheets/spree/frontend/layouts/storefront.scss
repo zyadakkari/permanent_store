@@ -28,16 +28,16 @@
   display: flex;
 }
 
-.sidebar {
-  position: fixed;
+// .sidebar-container {
+//   position: fixed;
   
-  top: 0;
-  z-index: 110;
-  display: block;
-  width: 100%;
-  flex-direction: column;
-  text-transform: uppercase;
-}
+//   top: 0;
+//   z-index: 110;
+//   display: block;
+//   width: 100%;
+//   flex-direction: column;
+//   text-transform: uppercase;
+// }
 
 @media (min-width: 940px) {
   .sidebar-container {
@@ -49,6 +49,8 @@
 @media (max-width: 940px) {
   .sidebar-container {
     display: none;
+    margin-top: 35px;
+
   }
 }
 

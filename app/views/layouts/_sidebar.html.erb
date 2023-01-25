@@ -1,6 +1,6 @@
 <% javascript_include_tag 'spree/frontend/homepage/sidebar' %>
-<nav class="sidebar-nav">
-  <div class="top-bar--search" style="opacity: 1;">
+<div class="sidebar-nav">
+  <div class="sidebar--search-desktop" style="opacity: 1;">
     <div class="search-field">
       <%= render 'shared/search/search_bar', taxons: taxons, taxon: taxon %>
     </div>
@@ -8,7 +8,7 @@
   <ul class="sidebar--desktop" style="opacity: 1;">
     <li class="nav-item-sidebar sidebar-shop">
       <span class="sidebar--title">Shop</span>
-      <div class="sidebar--items" style="opacity: 0; height: 0px;">
+      <div class="sidebar--items sidebar-items-shop" style="opacity: 0; height: 0px;">
         <ul class="sidebar-shop-left">
           <li class="sidebar-shop-all-item">
             <%= link_to 'New Arrivals', products_path %>
@@ -60,7 +60,7 @@
     </li>
     <li class="nav-item-sidebar sidebar-brand">
       <span class="sidebar--title">Brand</span>
-      <div class="sidebar--items" style="opacity: 0; height: 0px;">
+      <div class="sidebar--items sidebar-items-brand" style="opacity: 0; height: 0px;">
         <ul class="sidebar-brand-all">
           <li class="sidebar-brand-all-item">
             <a href="#">About Permanence</a>
@@ -76,7 +76,7 @@
     </li>
     <li class="nav-item-sidebar sidebar-customer-service">
       <span class="sidebar--title">Customer service</span>
-      <div class="sidebar--items" style="opacity: 0; height: 0px;">
+      <div class="sidebar--items sidebar-items-cust" style="opacity: 0; height: 0px;">
         <ul class="sidebar-customer-service-all">
           <li class="sidebar-customer-service-all-item">
             <a href="#">Frequently Asked Questions</a>
@@ -97,4 +97,87 @@
       </div>
     </li>
   </ul>
-</nav>
+  <div class="sidebar--mobile">
+    <div class="sidebar--options">
+    </div>
+    <ul class="sliding-navbar">
+      <li class="sidebar--mobile-title" onclick="toggleMenu(0);">Shop</li>
+      <li class="sidebar--mobile-title" style="margin-left: 101px;" onclick="toggleMenu(1);">
+        <a href="#">Obsessions</a>
+      </li>
+      <li class="sidebar--mobile-title" style="margin-left: 101px;" onclick="toggleMenu(2);">Brand</li>
+      <li class="sidebar--mobile-title" style="margin-left: 101px;" onclick="toggleMenu(3);">Customer service</li>
+    </ul>
+    <div class="sidebar--mobile-items">
+      <ul class="sidebar--mobile-submenu is-active">
+        <li class="sidebar-shop-all-item-mobile">
+          <%= link_to 'New Arrivals', products_path %>
+        </li>
+        <li class="sidebar-shop-all-item-mobile">
+          <%= link_to 'Coveted Pieces', products_path %>
+        </li>
+        <li></li>
+        <li class="sidebar-shop-all-item-mobile">
+          <%= link_to 'All Products', products_path %>
+        </li>
+        <li class="sidebar-shop-all-item-mobile">
+          <%= link_to 'Coats', products_path %>
+        </li>
+        <li class="sidebar-shop-all-item-mobile">
+          <%= link_to 'Jackets', products_path %>
+        </li>
+        <li class="sidebar-shop-all-item-mobile">
+          <%= link_to 'Dresses', products_path %>
+        </li>
+        <li class="sidebar-shop-all-item-mobile">
+          <%= link_to 'Tops', products_path %>
+        </li>
+        <li class="sidebar-shop-all-item-mobile">
+          <%= link_to 'Pants', products_path %>
+        </li>
+        <li class="sidebar-shop-all-item-mobile">
+          <%= link_to 'Skirts', products_path %>
+        </li>
+        <li class="sidebar-shop-all-item-mobile">
+          <%= link_to 'Watches', products_path %>
+        </li>
+        <li class="sidebar-shop-all-item-mobile">
+          <%= link_to 'Bags', products_path %>
+        </li>
+        <li class="sidebar-shop-all-item-mobile">
+          <%= link_to 'Shoes', products_path %>
+        </li>
+      </ul>
+      <ul class="sidebar--mobile-submenu"></ul>
+      <ul class="sidebar--mobile-submenu">
+        <li class="sidebar-shop-all-item-mobile">
+          <a href="#">About Permanence</a>
+        </li>
+        <li class="sidebar-shop-all-item-mobile">
+          <a href="#">Code of conduct</a>
+        </li>
+        <li class="sidebar-shop-all-item-mobile">
+          <a href="#">Press</a>
+        </li>
+      </ul>
+      <ul class="sidebar--mobile-submenu">
+        <li class="sidebar-shop-all-item-mobile">
+          <a href="#">Frequently Asked Questions</a>
+        </li>
+        <li class="sidebar-shop-all-item-mobile">
+          <a href="#">Shipping Information</a>
+        </li>
+        <li class="sidebar-shop-all-item-mobile">
+          <a href="#">Terms & Conditions</a>
+        </li>
+        <li class="sidebar-shop-all-item-mobile">
+          <a href="#">Newsletter</a>
+        </li>
+        <li class="sidebar-shop-all-item-mobile">
+          <a href="#">Privacy Policy</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+</div>

@@ -1,12 +1,16 @@
 <%= javascript_include_tag 'spree/frontend/homepage/topbar.js' %>
 <div class="header-top-bar">
   <div class="menu">
-    <div class="menu-sandwich" style="opacity: 1; transform: none;">
-      <button onclick="sidebar_open()">☰</button>
+    <div class="menu-sandwich" onclick="sidebar_open()" >
+      <div style="width: 21px; height: 1px; background-color: white; margin: 6px 6px;"></div>
+      <div style="width: 21px; height: 1px; background-color: white; margin: 6px 6px;"></div>
+    </div>
+    <div class="menu-close" style="margin: 0 6px;" onclick="sidebar_close()">
+      &#x2715;
     </div>
   </div>
   <div class="top-logo">
-    <%= link_to "PERMANENCE", root_path, class: 'logo--link' %>
+    <%= link_to image_tag('spree/frontend/logo/main_logo.jpg', class: "image_size"), root_path, class: 'logo--link' %>
   </div>
 
   <div class="cart-link" id="link-to-cart">

@@ -28,17 +28,6 @@
   display: flex;
 }
 
-// .sidebar-container {
-//   position: fixed;
-  
-//   top: 0;
-//   z-index: 110;
-//   display: block;
-//   width: 100%;
-//   flex-direction: column;
-//   text-transform: uppercase;
-// }
-
 @media (min-width: 940px) {
   .sidebar-container {
     width: var(--w-sidebar);

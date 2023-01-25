@@ -7,8 +7,8 @@
   </div>
   <ul class="sidebar--desktop" style="opacity: 1;">
     <li class="nav-item-sidebar sidebar-shop">
-      <span class="sidebar--title">Shop</span>
-      <div class="sidebar--items sidebar-items-shop" style="opacity: 0; height: 0px;">
+      <span class="sidebar--title" onclick="toggleDesktop(0)">Shop</span>
+      <div class="sidebar--items sidebar-items-shop">
         <ul class="sidebar-shop-left">
           <li class="sidebar-shop-all-item">
             <%= link_to 'New Arrivals', products_path %>
@@ -59,8 +59,8 @@
       <a class="sidebar--title">Obsessions</a>
     </li>
     <li class="nav-item-sidebar sidebar-brand">
-      <span class="sidebar--title">Brand</span>
-      <div class="sidebar--items sidebar-items-brand" style="opacity: 0; height: 0px;">
+      <span class="sidebar--title" onclick="toggleDesktop(1)">Brand</span>
+      <div class="sidebar--items sidebar-items-brand">
         <ul class="sidebar-brand-all">
           <li class="sidebar-brand-all-item">
             <a href="#">About Permanence</a>
@@ -75,8 +75,8 @@
       </div>
     </li>
     <li class="nav-item-sidebar sidebar-customer-service">
-      <span class="sidebar--title">Customer service</span>
-      <div class="sidebar--items sidebar-items-cust" style="opacity: 0; height: 0px;">
+      <span class="sidebar--title" onclick="toggleDesktop(2)">Customer service</span>
+      <div class="sidebar--items sidebar-items-cust">
         <ul class="sidebar-customer-service-all">
           <li class="sidebar-customer-service-all-item">
             <a href="#">Frequently Asked Questions</a>
@@ -99,6 +99,24 @@
   </ul>
   <div class="sidebar--mobile">
     <div class="sidebar--options">
+      <div class="sidebar--mobile-search">
+        <%= render 'shared/search/search_bar', taxons: taxons, taxon: taxon %>
+      </div>
+      <div class="sidebar--mobile-additional">
+        <div class="sidebar--mobile-favorites">
+          <ul class="sidebar--mobile-favorites-list">
+            <li class="sidebar--mobile-favorites-item">Favourites</li>
+          </ul>
+        </div>
+        <div class="sidebar--mobile-currency">
+          <ul class="sidebar--mobile-currency-list">
+            <li class="sidebar--mobile-currency-item is-active">GBP</li>
+            <li class="sidebar--mobile-currency-item">USD</li>
+            <li class="sidebar--mobile-currency-item">EUR</li>
+            <li class="sidebar--mobile-currency-item">EGP</li>
+          </ul>
+        </div>
+      </div>
     </div>
     <ul class="sliding-navbar">
       <li class="sidebar--mobile-title" onclick="toggleMenu(0);">Shop</li>
@@ -179,5 +197,4 @@
       </ul>
     </div>
   </div>
-  
 </div>

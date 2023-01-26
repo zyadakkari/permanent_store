@@ -8,8 +8,9 @@
   class_names = classes.push(base_class).join(" ")
 %>
 
-<ul class="<%= class_names %>">
+<div class="products--grid grid-cols-3">
   <% products.each do |product| %>
+
     <%= render 'products/product-card', product: product %>
   <% end %>
-</ul>
+</div>

@@ -1,12 +1,22 @@
 <div class="products">
+  <h1 class="products-title">
+    All products
+    <button class="filters--toggle">Filter & sort</button>
+  </h1>
   <aside>
     <% if "products" == params[:controller] && @taxon %>
       <%= render 'shared/search/filters', taxon: @taxon %>
     <% else %>
-      <%= render 'shared/navigation/taxonomies', taxon: @taxon %>
+      <%#= render 'shared/navigation/taxonomies', taxon: @taxon %>
     <% end %>
   </aside>
-  <section class="products_section">
+  <div class="products--layout">
+    <span class="products--layout--title">View</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+  </div>
+  <div class="products--container">
     <% if params[:keywords] %>
       <% if @products.empty? %>
         <h6>
@@ -18,5 +28,5 @@
     <% else %>
       <%= render 'products', products: @products, taxon: @taxon %>
     <% end %>
-  </section>
+  </div>
 </div>

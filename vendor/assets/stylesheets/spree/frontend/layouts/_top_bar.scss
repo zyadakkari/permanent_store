@@ -54,3 +54,41 @@ a, a:hover, a:active, a:visited, a:focus {
         grid-column-start: 3;
     }
 }
+
+.header-top-bar .cart-toggle {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    right: 4px;
+    color: white;
+}
+
+button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+span .cart-toggle--dot, .bag {
+    padding: 2px;
+}
+
+@media (min-width: 480px) {
+    .bag {
+        display: block;
+    }
+}
+ 
+@media (max-width: 480px) {
+    .bag {
+        display: none;
+    }
+}

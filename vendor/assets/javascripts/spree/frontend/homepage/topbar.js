@@ -21,3 +21,15 @@ function sidebar_open() {
     menu[0].style.display = "block";
     
   }
+
+  function bag_toggle() {
+    var bag = document.getElementsByClassName("bag-container");
+    var content = document.getElementsByClassName("storefront-content");
+    if(bag[0].classList.contains("is-active")) {
+      bag[0].classList.remove("is-active");
+      content[0].style.display = "block";
+    } else {
+      bag[0].classList.add("is-active");
+      content[0].style.display = "none";
+    }
+  }

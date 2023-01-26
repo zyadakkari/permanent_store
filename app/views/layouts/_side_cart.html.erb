@@ -1,0 +1,9 @@
+<div class="cart-header">
+    <div class="cart-link" id="link-to-cart">
+        <%= link_to "Bag", edit_cart_path, class: "cart" %>
+    </div>
+    <div class="cart-close" onclick="bag_toggle()">&#x2715;</div>
+</div>
+<script>
+    Solidus.fetch_cart('<%= j cart_link_path %>')
+</script>

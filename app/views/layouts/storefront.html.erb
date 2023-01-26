@@ -29,7 +29,11 @@
         <%= render 'layouts/sidebar', taxons: @taxons, taxon: @taxon %>
       </div>
       <div class="storefront-content">
-        <%= render 'home/hero2' %>  
+        <%#= render 'home/hero2' %>  
+        <%= yield %>
+      </div>
+      <div class="bag-container">
+        <%= render 'layouts/side_cart'%>
       </div>
       <script 
         <div class="category-navigation">
@@ -45,6 +49,7 @@
         </main>
         <%#= yield :templates %>
       </div>
+      
 
 
     </div>

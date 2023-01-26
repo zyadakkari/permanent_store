@@ -64,3 +64,25 @@
   z-index: 1;
 }
 
+@media (min-width: 940px) {
+  .bag-container.is-active {
+    display: block;
+    width: var(--w-sidebar);
+    flex-shrink: 0;
+    padding: 20px 0 20px 20px;
+  }
+}
+
+@media (max-width: 940px) {
+  .bag-container.is-active {
+    display: block;
+    min-width: 100%;
+    margin-top: 35px;
+    padding: 10px 0 10px 10px;
+  }
+}
+
+.bag-container {
+  display: none;
+  z-index: 180;
+}

@@ -11,7 +11,9 @@
 :root {
     --px-md: 10px;
     --w-sidebar: 325px;
+    --w-bag: 395px;
     --dimmed: #cfcfcf;
+    --muted: #f9f9f9;
     --ease-out-expo: cubic-bezier(0.16,1,0.3,1);
   }
 

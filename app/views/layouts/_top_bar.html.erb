@@ -12,16 +12,15 @@
   <div class="top-logo">
     <%= link_to image_tag('spree/frontend/logo/main_logo.jpg', class: "image_size"), root_path, class: 'logo--link' %>
   </div>
+  <button class="cart-toggle"  onclick="bag_toggle()">
+    <span class="bag">Bag</span>
+    <span class="cart-toggle--dot">
+      <span>&#183;</span>
+    </span>
+  </button>
 
-  <div class="cart-link" id="link-to-cart">
-    <noscript>
-      <%= link_to "Bag", edit_cart_path, class: "cart" %>
-    </noscript>
-  </div>
 
-  <script>
-    Solidus.fetch_cart('<%= j cart_link_path %>')
-  </script>
+  
 </div>
 
 

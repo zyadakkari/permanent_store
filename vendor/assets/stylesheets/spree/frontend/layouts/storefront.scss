@@ -24,7 +24,7 @@
 }
 
 .storefront-container {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
 }
 
@@ -46,6 +46,7 @@
 .storefront-content {
   display: block;
   width: 100%;
+  overflow-y: scroll;
 }
 @media (min-width: 940px) {
   .storefront-content {

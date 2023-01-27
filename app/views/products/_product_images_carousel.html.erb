@@ -1,0 +1,16 @@
+<div class="product-images-carousel">
+<% product.gallery.images.each do |image| %>
+    <div class="product-images-carousel-item">
+    
+      <%= render(ImageComponent.new(
+        image: image,
+        size: :product,
+        itemprop: "image",
+        data: { js: 'product-main-image' }
+      )) %>
+      
+    </div>
+    <% end %>
+
+
+</div>

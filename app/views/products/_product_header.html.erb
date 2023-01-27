@@ -1,10 +1,9 @@
-<header class="product-header">
-  <h1 class="product-header__title" itemprop="name">
+  <div class="product-header-title" itemprop="name">
     <%= product.name %>
-  </h1>
+  </div>
 
   <% if product.price_for_options(current_pricing_options)&.money and !product.price.nil? %>
-    <h2 class="product-header__title" id="product-price">
+    <div class="product-header-price" id="product-price">
       <%= content_tag(
         :span,
         display_price(product),
@@ -19,6 +18,6 @@
         itemprop: 'priceCurrency',
         content: current_pricing_options.currency
       ) %>
-    </h2>
+    </div>
   <% end %>
-</header>
+

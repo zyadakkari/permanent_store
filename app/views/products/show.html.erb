@@ -1,24 +1,63 @@
 <% @body_id = 'product-details' %>
 
 <% cache [I18n.locale, current_pricing_options, @product] do %>
-  <article class="product-page" itemscope itemtype="http://schema.org/Product">
-    <div class="product-page-row">
-      <div class="product-page__images">
-        <%= render 'product_image', product: @product %>
-        <%= render 'product_thumbnails', product: @product %>
+  <div class="product-page" itemscope itemtype="http://schema.org/Product">
+    <div class="product--gallery">
+      <div class="product-page--images">
+        <%= render 'product_images_carousel', product: @product %>
       </div>
+    </div>
+    <div class="product--info">
+      <div class="product--info--header">
+        <div class="product--info--header--title">
+          <%= render 'product_header', product: @product %>
+        </div>
+        <div class="product--info--header--button">
+          <%= render 'cart_line_items/form', product: @product %>
+        </div>
+      </div>
+      <div class="product--info--description">
+        <div class="accordion">
+          <button class="accordion--toggle" onclick="accordionToggle(0)">
+          <div class="accordion--icon">-</div>
+            Description
+          </button>
+          <div class="accordion--content is-active" >
+            <%= render 'product_info', product: @product %>
+            <%= render 'product_properties', product_properties: @product_properties %>
+          </div>
+        </div>
+        <div class="accordion">
+          <button class="accordion--toggle" onclick="accordionToggle(1)">
+          <div class="accordion--icon">+</div>
+            Delivery & Returns
+          </button>
+          <div class="accordion--content"></div>
+        </div>
+        <div class="accordion">
+          <button class="accordion--toggle" onclick="accordionToggle(2)">
+          <div class="accordion--icon">+</div>
+            Care Guide
+          </button>
+          <div class="accordion--content"></div>
+        </div>
 
-      <div class="product-page__info">
-        <%= render 'product_header', product: @product %>
-        <%= render 'product_promotions', product: @product %>
-        <%= render 'cart_line_items/form', product: @product %>
+        <div class="accordion">
+          <button class="accordion--toggle" onclick="accordionToggle(3)">
+            <div class="accordion--icon">+</div>
+              Size Assistance
+          </button>
+          <div class="accordion--content"></div>
+        </div>
+        
         <%= render 'product_taxons', product: @product %>
       </div>
+      
+      <%= render 'product_promotions', product: @product %>
+      
+      
+      
+      
     </div>
-
-    <div class="product-page-row">
-      <%= render 'product_info', product: @product %>
-      <%= render 'product_properties', product_properties: @product_properties %>
-    </div>
-  </article>
+  </div>
 <% end %>

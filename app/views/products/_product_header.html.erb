@@ -1,9 +1,12 @@
+  <div class="product-header-taxon">
+  </div>
+  
   <div class="product-header-title" itemprop="name">
     <%= product.name %>
   </div>
 
   <% if product.price_for_options(current_pricing_options)&.money and !product.price.nil? %>
-    <div class="product-header-price" id="product-price">
+    <div class="product-header-price" class="product-price" id="product-price">
       <%= content_tag(
         :span,
         display_price(product),

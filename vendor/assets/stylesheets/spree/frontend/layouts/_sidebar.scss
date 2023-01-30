@@ -188,7 +188,7 @@ input#keywords.search-bar__input {
     letter-spacing: .05em;
 }
 
-nav ul {
+div ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -262,4 +262,8 @@ a {
 
 .sidebar--desktop>lie:last-child:last-child {
     margin-bottom: 0;
+}
+
+.sidebar-shop-all-item {
+    list-style: none;
 }

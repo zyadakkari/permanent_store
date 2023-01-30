@@ -1,13 +1,13 @@
 function accordionToggle(n) {
     let accordions = Array.from(document.getElementsByClassName("accordion--content"));
     let buttons = Array.from(document.getElementsByClassName("accordion--icon"));
-    for(let i = 0; i < accordions.length; i++) {
-        if((i == n) && (accordions[i].classList.contains("is-active"))) {
-            accordions[i].classList.remove("is-active")
-            buttons[i].innerHTML = "+";
-        } else if ((i == n) && (!accordions[i].classList.contains("is-active"))) {
-            accordions[i].classList.add("is-active")
-            buttons[i].innerHTML = "-";
-        }
+    if (accordions[n].classList.contains("is-active")) {
+        accordions[n].classList.remove("is-active")
+        buttons[n].querySelector(".collapse-icon").classList.remove("is-active");
+        buttons[n].querySelector(".expand-icon").classList.add("is-active");
+    } else if (!accordions[n].classList.contains("is-active")) {
+        accordions[n].classList.add("is-active");
+        buttons[n].querySelector(".collapse-icon").classList.add("is-active");
+        buttons[n].querySelector(".expand-icon").classList.remove("is-active");
     }
 }

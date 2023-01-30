@@ -1,11 +1,14 @@
 function infoToggle() {
-    var info = document.getElementsByClassName("product--info")
-    var mobile = document.getElementsByClassName("mobile-layout")
+    var info = document.getElementsByClassName("mobile--product--info")
+    var gallery = document.getElementsByClassName("product--gallery")
+    var close = document.getElementsByClassName("info--close")
     if (info[0].classList.contains("is-active")) {
         info[0].classList.remove("is-active")
-        mobile[0].style.display = "block"
+        gallery[0].style.display = "block"
+        close[0].style.display = "none"
     } else {
         info[0].classList.add("is-active")
-        mobile[0].style.display = "none"
+        gallery[0].style.display = "none"
+        close[0].style.display = "block"
     }
 }

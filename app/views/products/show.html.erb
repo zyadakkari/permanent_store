@@ -6,23 +6,24 @@
       <div class="product-page--images">
         <%= render 'product_images_carousel', product: @product %>
       </div>
-    </div>
-    <div class="mobile-layout is-active">
-      <div class="mobile-product-button">
-        <%= render 'cart_line_items/form', product: @product %>
+      <div class="mobile-layout is-active">
+        <div class="mobile-product-button">
+          <%= render 'cart_line_items/form', product: @product %>
+        </div>
+        <div class="mobile-product-info-button">
+          <button class="info-toggle" onclick="infoToggle()">
+            <svg fill="#000000" height="6px" width="6px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+            viewBox="0 0 330 330" xml:space="preserve">
+            <path id="XMLID_224_" d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394
+            l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393
+            C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"/>
+            </svg>
+            Info
+          </button>
+        </div>
       </div>
-      <div class="mobile-product-info-button">
-        <button class="info-toggle" onclick="infoToggle()">
-          <svg fill="#000000" height="6px" width="6px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-          viewBox="0 0 330 330" xml:space="preserve">
-          <path id="XMLID_224_" d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394
-          l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393
-          C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"/>
-          </svg>
-          Info
-        </button>
-      </div>
     </div>
+    
     <div class="product--info">
       <div class="product--info--header">
         <div class="product--info--header--title">
@@ -151,10 +152,140 @@
       </div>
       
       <%= render 'product_promotions', product: @product %>
+    </div>
+    <div class="mobile--product--info">
       
+      <div class="product--info--header">
+        <div class="info--close" onclick="infoToggle()">
+          &#x2715;
+        </div>
+        <div class="product--info--header--title">
+          <%= render 'product_header', product: @product %>
+        </div>
+        <div class="product--info--header--button">
+          <%= render 'cart_line_items/form', product: @product %>
+        </div>
+      </div>
+      <div class="product--info--description">
+        <div class="accordion">
+          <button class="accordion--toggle" onclick="mobileAccordionToggle(0)">
+          <div class="mobile--accordion--icon">
+            <div class="collapse-icon is-active">
+              <svg fill="#000000" height="6px" width="6px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+              viewBox="0 0 330 330" xml:space="preserve">
+              <path id="XMLID_224_" d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394
+              l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393
+              C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"/>
+              </svg>
+            </div>
+            <div class="expand-icon">
+              <svg fill="#000000" height="6px" width="6px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+              viewBox="0 0 330 330" xml:space="preserve">
+              <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393
+              c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393
+              s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+              </svg>
+            </div>
+
+          </div>
+            Description
+          </button>
+          <div class="mobile--accordion--content is-active" >
+            <%= render 'product_info', product: @product %>
+            <%= render 'product_properties', product_properties: @product_properties %>
+          </div>
+        </div>
+        <div class="accordion">
+          <button class="accordion--toggle" onclick="mobileAccordionToggle(1)">
+            <div class="mobile--accordion--icon">
+              <div class="collapse-icon">
+                <svg fill="#000000" height="6px" width="6px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                viewBox="0 0 330 330" xml:space="preserve">
+                <path id="XMLID_224_" d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394
+                l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393
+                C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"/>
+                </svg>
+              </div>
+              <div class="expand-icon is-active">
+                <svg fill="#000000" height="6px" width="6px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                viewBox="0 0 330 330" xml:space="preserve">
+                <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393
+                c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393
+                s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+                </svg>
+              </div>
+              </div>
+              Delivery & Returns
+            </button>
+          <div class="mobile--accordion--content">
+          Why do we use it?
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            
+            
+            Where does it come from?
+            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+            
+            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+            
+            Where can I get some?
+            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem 
+          </div>
+        </div>
+        <div class="accordion">
+          <button class="accordion--toggle" onclick="mobileAccordionToggle(2)">
+            <div class="mobile--accordion--icon">
+              <div class="collapse-icon">
+                <svg fill="#000000" height="6px" width="6px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                viewBox="0 0 330 330" xml:space="preserve">
+                <path id="XMLID_224_" d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394
+                l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393
+                C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"/>
+                </svg>
+              </div>
+              <div class="expand-icon is-active">
+                <svg fill="#000000" height="6px" width="6px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                viewBox="0 0 330 330" xml:space="preserve">
+                <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393
+                c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393
+                s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+                </svg>
+              </div>
+            </div>
+            Care Guide
+            </button>
+          <div class="mobile--accordion--content"></div>
+        </div>
+
+        <div class="accordion">
+          <button class="accordion--toggle" onclick="mobileAccordionToggle(3)">
+            <div class="mobile--accordion--icon">
+              <div class="collapse-icon">
+                <svg fill="#000000" height="6px" width="6px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                viewBox="0 0 330 330" xml:space="preserve">
+                <path id="XMLID_224_" d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394
+                l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393
+                C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"/>
+                </svg>
+              </div>
+              <div class="expand-icon is-active">
+                <svg fill="#000000" height="6px" width="6px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                viewBox="0 0 330 330" xml:space="preserve">
+                <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393
+                c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393
+                s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+                </svg>
+              </div>
+            </div>
+              Size Assistance
+            </button>
+          <div class="mobile--accordion--content"></div>
+        </div>
+        
+        <%= render 'product_taxons', product: @product %>
+      </div>
       
-      
-      
+      <%= render 'product_promotions', product: @product %>
+
     </div>
   </div>
 <% end %>

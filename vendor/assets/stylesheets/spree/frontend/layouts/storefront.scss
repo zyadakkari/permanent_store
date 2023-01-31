@@ -70,8 +70,11 @@
   .bag-container.is-active {
     display: block;
     width: var(--w-sidebar);
+    height: 100%;
     flex-shrink: 0;
     padding: 20px 0 20px 20px;
+    position: absolute;
+    right: 0;
   }
 }
 
@@ -87,4 +90,5 @@
 .bag-container {
   display: none;
   z-index: 180;
+  background-color: white;
 }

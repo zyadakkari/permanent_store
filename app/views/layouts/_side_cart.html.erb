@@ -4,6 +4,9 @@
     </div>
     <div class="cart-close" onclick="bag_toggle()">&#x2715;</div>
 </div>
+<div class="cart-body">
+    <%= render 'carts/sidebar-cart' %>
+</div>
 <script>
     Solidus.fetch_cart('<%= j cart_link_path %>')
 </script>

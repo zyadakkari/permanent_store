@@ -26,10 +26,14 @@ function sidebar_open() {
     var bag = document.getElementsByClassName("bag-container");
     var content = document.getElementsByClassName("storefront-content");
     if(bag[0].classList.contains("is-active")) {
-      bag[0].classList.remove("is-active");
-      content[0].style.display = "block";
+      bag[0].classList.remove("is-active")
+      if (window.matchMedia("(max-width: 940px)").matches) {
+        content[0].style.display = "block";
+      };
     } else {
-      bag[0].classList.add("is-active");
-      content[0].style.display = "none";
+      bag[0].classList.add("is-active")
+      if (window.matchMedia("(max-width: 940px)").matches) {
+        content[0].style.display = "none"
+      };
     }
   }

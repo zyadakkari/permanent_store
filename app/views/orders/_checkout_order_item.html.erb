@@ -1,0 +1,35 @@
+<td class="order-item__image">
+    <div class="product-thumbnail">
+        <div class="product-thumbnail__wrapper">
+            <%= link_to(
+            render(ImageComponent.new(
+                image: item.variant.gallery.images.first || item.variant.product.gallery.images.first,
+                size: :small,
+                class: "product-thumbnail__image"
+            ) ),
+            item.variant.product
+            ) %>
+        </div>
+    </div>
+</td>
+<th class="order-item__desc">
+
+  <%= render(
+    'orders/checkout_item_info',
+    line_item: item.variant.product,
+    stock_info: false,
+    variant: item.variant
+  ) %>
+</th>
+<td class="order-item__quantity">
+    <span>&#10005;<%= item.quantity %></span>
+</td>
+
+<td class="order-item__price">
+    <%= item.single_money.to_html %>
+</td>
+
+  
+
+ 
+

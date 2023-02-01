@@ -1,0 +1,248 @@
+@media (min-width: 1000px) {
+    .checkout-summary {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        height: calc(100vh - 8em);
+        width: 100%;
+    }
+}
+
+.order-item__image {
+    content: '';
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 8px;
+    border: 1px rgba(0,0,0,0.1) solid;
+    z-index: 2;
+}
+
+.checkout-order--items-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 1em;
+    width: 100%;
+    
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+    
+}
+
+.checkout-order--items-table tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.checkout-table-head th {
+    white-space: nowrap;
+    font-weight: 500;
+    color: #333333;
+}
+
+.checkout-order--items-table th, .checkout-order--items-table td {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+td:first-child, th:first-child {
+    padding-left: 0;
+    text-align: left;
+}
+
+.order-item__image {
+    display: flex;
+    justify-content: center;
+}
+
+td, th {
+    padding-left: 1em;
+}
+td, th {
+    padding: 0;
+    font-weight: normal;
+}
+
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+    width: 100%;
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    clip: rect(0 0 0 0);
+    width: 2px;
+    height: 2px;
+    margin: -2px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.product-row:first-child td {
+    padding-top: 0;
+}
+
+.product-row td {
+    padding-top: 1em;
+}
+.checkout-order--items-table td {
+    border-color: #fad9d9;
+}
+.checkout-order--items-table td {
+    border-color: #f0e4bc;
+}
+.checkout-order--items-table td {
+    border-color: #d1ecd4;
+}
+.checkout-order--items-table th, .checkout-order--items-table td {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+td:first-child, th:first-child {
+    padding-left: 0;
+    text-align: left;
+}
+
+td, th {
+    padding-left: 1em;
+}
+
+td, th {
+    padding: 0;
+    font-weight: normal;
+}
+
+
+
+.order-item__desc, .order-item__price, .order-item__quantity {
+    padding-left: 1em;
+}
+
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+.product-thumbnail {
+    width: 4.6em;
+    height: 4.6em;
+    border-radius: 8px;
+    background: #fff;
+    position: relative;
+}
+
+.product-thumbnail__wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.product-thumbnail__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+
+.product-description__name {
+    color: #323232;
+    width: 1em;
+    min-width: 100%;
+    display: block;
+    font-weight: 500;
+    text-align: left;
+    
+}
+
+.product-description__variant {
+    color: #717171;
+    display: block;
+    font-size: 0.8571428571em;
+    text-align: left;
+}
+
+td:last-child, th:last-child {
+    text-align: right;
+}
+.order-item__price {
+    white-space: nowrap;
+}
+
+.checkout-total-lines {
+    border-top: 1px solid rgba(175,175,175,0.34);
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+}
+
+@media (min-width: 1000px) {
+    .checkout-total-lines {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+    }
+}
+
+
+.total-line-table {
+    width: 100%;
+}
+
+.total-line-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 1em;
+}
+
+.total-line-table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+hr {
+    margin-top: 3em;
+    margin-bottom: 3em;
+}

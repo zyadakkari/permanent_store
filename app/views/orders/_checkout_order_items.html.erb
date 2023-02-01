@@ -1,0 +1,56 @@
+<%
+  base_class = "order-items".freeze
+
+  # Optional props
+  classes = local_assigns.fetch(:classes, [])
+
+  # Classes
+  class_names = classes.push(base_class).join(" ")
+%>
+
+<div class="checkout-order--items">
+    <table class="checkout-order--items-table">
+        <thead class="checkout-table-head">
+            <tr>
+            <th class="checkout-order--items-table__image visually-hidden">Image</th>
+            <th class="checkout-order--items-table__name visually-hidden">Description</th>
+            <th class="checkout-order--items-table__quantity visually-hidden">Quantity</th>
+            <th class="checkout-order--items-table__price visually-hidden">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% order.line_items.each do |item| %>
+            <tr class="product-row">
+                <td class="order-item__image">
+                    <div class="product-thumbnail">
+                        <div class="product-thumbnail__wrapper">
+                            <%= link_to(
+                                render(ImageComponent.new(
+                                image: item.variant.gallery.images.first || item.variant.product.gallery.images.first,
+                                size: :small,
+                                class: "product-thumbnail__image"
+                                ) ),
+                                item.variant.product
+                            ) %>
+                        </div>
+                    </div>
+                </td>
+                <th class="order-item__desc">
+                    <span class="product-description__name">
+                    <%= link_to item.variant.product.name, product_path(item.variant.product) %>
+                    </span>
+                    <span class="product-description__variant">
+                        <%= item.variant.options_text %>
+                    </span>
+                </th>
+                <td class="order-item__quantity">
+                    <span><%= item.quantity %></span>
+                </td>
+                <td class="order-item__price">
+                    <%= item.single_money.to_html %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

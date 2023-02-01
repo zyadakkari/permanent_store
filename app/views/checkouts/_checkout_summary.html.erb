@@ -1,75 +1,145 @@
-<section class="checkout-summary" id="checkout-summary">
-  <h2 class="checkout-summary__title">
-    <%= t('spree.order_summary') %>
-  </h2>
+<div class="checkout-summary" id="checkout-summary">
 
   <%= render(
-    'orders/order_items',
+    'orders/checkout_order_items',
     order: order,
     classes: ['order-items--summary']
   )%>
 
-  <dl>
-    <div class="checkout-summary__entry" id="item-total">
-      <dt><%= t('spree.item_total') %>:</dt>
-      <dd><%= order.display_item_total.to_html %></dd>
-    </div>
+  <hr>
 
-    <% if order.line_item_adjustments.nonzero.exists? %>
-      <% order.line_item_adjustments.nonzero.promotion.eligible.group_by(&:label).each do |label, adjustments| %>
-        <div class="checkout-summary__entry">
-          <dt><%= label %></dt>
-          <dd><%= Spree::Money.new(adjustments.sum(&:amount), currency: order.currency).to_html %></dd>
-        </div>
-      <% end %>
-    <% end %>
-
-    <% order.all_adjustments.nonzero.tax.eligible.group_by(&:label).each do |label, adjustments| %>
-      <div class="checkout-summary__entry">
-        <dt><%= label %></dt>
-        <dd><%= Spree::Money.new(adjustments.sum(&:amount), currency: order.currency).to_html %></dd>
-      </div>
-    <% end %>
-
-    <% if order.passed_checkout_step?("delivery") && order.shipments.any? %>
-      <div class="checkout-summary__entry">
-        <dt><%= t('spree.shipping_total') %>:</dt>
-        <dd><%= Spree::Money.new(order.shipments.to_a.sum(&:cost), currency: order.currency).to_html %></dd>
-      </div>
-
-      <% if order.shipment_adjustments.nonzero.exists? %>
-        <% order.shipment_adjustments.nonzero.promotion.eligible.group_by(&:label).each do |label, adjustments| %>
-          <div class="checkout-summary__entry">
-            <dt><%= label %>:</dt>
-            <dd><%= Spree::Money.new(adjustments.sum(&:amount), currency: order.currency).to_html %></dd>
-          </div>
+  <div class="checkout-total-lines">
+    <table class="total-line-table">  
+      <thead>
+        <tr>
+          <th scope="col"><span class="visually-hidden">Description</span</th>
+          <th scope="col"><span class="visually-hidden">Total</span></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <tr class="total-line">
+          <th class="total-line-name" scope="row">Subtotal</th>
+          <td class="total-line-price">
+            <span class="order-summary__emphasis">
+              <%= order.display_item_total.to_html %>
+            </span>
+          </td>
+        </tr>
+        <tr class="total-line">
+          <th class="total-line-name" scope="row">Shipping</th>
+          <td class="total-line-price">
+            <span class="order-summary__emphasis">
+              <%= order.display_ship_total.to_html %>
+            </span>
+          </td>
+        </tr>
+        <tr class="total-line">
+          <th class="total-line-name" scope="row">Tax</th>
+          <td class="total-line-price">
+            <span class="order-summary__emphasis">
+              <%= order.display_tax_total.to_html %>
+            </span>
+          </td>
+        </tr>
+        <% if order.line_item_adjustments.nonzero.exists? %>
+          <% order.line_item_adjustments.nonzero.promotion.eligible.group_by(&:label).each do |label, adjustments| %>
+            <tr class="total-line">
+              <th class="total-line-adjustment" scope="row"><%= label %></th>
+              <td class="total-line-adjustment">
+                <span class="order-summary__emphasis">
+                  <%= Spree::Money.new(adjustments.sum(&:amount), currency: order.currency).to_html %>
+                </span>
+              </td>
+            </tr>
+          <% end %>
         <% end %>
-      <% end %>
-    <% end %>
-
-    <% if order.adjustments.nonzero.non_tax.eligible.exists? %>
-      <div class="checkout-summary__entry" id="summary-order-charges">
-        <% order.adjustments.nonzero.non_tax.eligible.each do |adjustment| %>
-          <dt><%= adjustment.label %>:</dt>
-          <dd><%= adjustment.display_amount.to_html %></dd>
+        <% order.all_adjustments.nonzero.tax.eligible.group_by(&:label).each do |label, adjustments| %>
+          <tr class="total-line">
+            <th class="total-line-adjustment" scope="row"><%= label %></th>
+            <td class="total-line-adjustment">
+              <span class="order-summary__emphasis">
+                <%= Spree::Money.new(adjustments.sum(&:amount), currency: order.currency).to_html %>
+              </span>
+            </td>
+          </tr>
         <% end %>
-      </div>
-    <% end %>
+        <% if order.passed_checkout_step?("delivery") && order.shipments.any? %>
+          <tr class="total-line">
+            <th class="total-line-name" scope="row">Shipping</th>
+            <td class="total-line">
+              <span class="order-summary__emphasis">
+                <%= order.display_ship_total.to_html %>
+              </span>
+            </td>
+          </tr>
+          <% if order.shipment_adjustments.nonzero.exists? %>
+            <% order.shipment_adjustments.nonzero.promotion.eligible.group_by(&:label).each do |label, adjustments| %>
+              <tr class="total-line">
+                <th class="total-line">
+                  <span class="total-line-shipment-adjustment"><%= label %></span>
+                </th>
+                <td class="total-line-shipment-adjustment">
+                  <span class="order-summary__emphasis">
+                    <%= Spree::Money.new(adjustments.sum(&:amount), currency: order.currency).to_html %>
+                  </span>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+        <% end %>
+        <% if order.adjustments.nonzero.non_tax.eligible.exists? %>
+          <% order.adjustments.nonzero.non_tax.eligible.group_by(&:label).each do |label, adjustments| %>
+            <tr class="total-line">
+              <th class="total-line">
+                <span class="total-line"><%= adjustment.label %></span>
+              </th>
+              <td class="total-line">
+                <span class="order-summary__emphasis">
+                  <%= adjustment.display_amount.to_html %>
+                </span>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+        <% if order.total_applicable_store_credit > 0.0 %> 
+          <tr class="total-line">
+            <th class="total-line">
+              <span class="total-line">Store credit</span>
+            </th>
+            <td class="total-line">
+              <span class="order-summary__emphasis">
+                <%= order.display_total_applicable_store_credit.to_html %>
+              </span>
+            </td>
+          </tr>
+        <% end %>
 
-    <% if order.total_applicable_store_credit > 0.0 %>
-      <div class="checkout-summary__entry">
-        <dt><%= t('spree.store_credit.store_credit') %>:</dt>
-        <dd><%= order.display_total_applicable_store_credit.to_html %></dd>
-      </div>
-    <% end %>
+      </tbody>
+      <tfoot class="total-line-table__footer">
+        <tr class="total-line">
+          <th class="total-line-name" scope="row">Total</th>
+          <td class="total-line-price">
+            <span class="order-summary__emphasis order-currency">
+              <%= order.currency %>
+            </span>
+            <span class="order-summary__emphasis order-summary__emphasis--large">
+              <%= order.display_total.to_html %>
+            </span>
+          </td>
+        </tr>
+
+      </tfoot>
+    </table>
+  </div>
 
     <div class="checkout-summary__total">
-      <dt><%= t('spree.order_total') %>:</dt>
-      <dd><%= order.display_order_total_after_store_credit.to_html %></dd>
+      <dt><%#= t('spree.order_total') %></dt>
+      <dd><%#= order.display_order_total_after_store_credit.to_html %></dd>
     </div>
   </dl>
 
   <% if order.state == 'payment' %>
     <%= render 'orders/coupon_code' %>
   <% end %>
-</section>
+</div>

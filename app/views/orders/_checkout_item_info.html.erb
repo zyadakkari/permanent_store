@@ -1,0 +1,22 @@
+<%
+  base_class = "item-info".freeze
+
+  # Optional props
+  stock_info = local_assigns.fetch(:stock_info, true)
+
+  # Classes
+  class_names = [base_class]
+  class_names = class_names.join(" ")
+%>
+
+
+  <span class="product-description__name">
+    <%= link_to line_item.name, product_path(variant.product) %>
+  </span>
+
+  <span class="product-description__variant">
+    <%= variant.options_text %>
+  </span>
+
+  
+

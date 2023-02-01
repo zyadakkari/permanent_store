@@ -1,16 +1,21 @@
-<article class="checkout">
-  <%= render "shared/error_messages", target: @order %>
-  <%= render "checkout_header" %>
+<%= stylesheet_link_tag 'spree/frontend/all.css' %>
 
-  <div class="checkout__main">
-    <section class="checkout__step">
-      <%= render "checkout_step", order: @order %>
-    </section>
+<div class="checkout">
+  <div class="checkout-main">
+    <%= render "shared/error_messages", target: @order %>
+    <%= render "checkout_header" %>
 
+    <div class="checkout-steps-sections">
+      <div class="checkout__step">
+        <%= render "checkout_step", order: @order %>
+      </div>
+    </div>
+  </div>
+  <div class="checkout--aside">
     <% if @order.state != "confirm" %>
       <div class="checkout__summary">
         <%= render "checkout_summary", order: @order %>
       </div>
     <% end %>
   </div>
-</article>
+</div>

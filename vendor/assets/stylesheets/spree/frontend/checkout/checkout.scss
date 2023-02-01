@@ -1,0 +1,154 @@
+.checkout {
+    display: flex;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    flex-wrap: nowrap;
+}
+
+@media (min-width: 1000px) {
+    .checkout {
+        padding: 0 5%;
+
+    }
+
+    .checkout > * {
+        padding-top: 4em;
+    }
+
+    .checkout-main {
+        width: 52%;
+        padding-right: 6%;
+        float: left;
+    }
+
+    .checkout--aside {
+        width: 38%;
+        padding-left: 4%;
+        background-position: left top;
+        float: right;
+    }
+
+    .checkout-header {
+        padding-bottom: 2em;
+    }
+}
+
+.checkout-main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout--aside {
+    position: relative;
+    color: #535353;
+}
+
+.checkout-header__title {
+    color: #333333;
+    font-size: 2em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-size: 1.7142857143em;
+    line-height: 1.3em;
+}
+
+.checkout-header__steps ul { 
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.checkout-header__steps li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.contact-info-header {
+    margin-bottom: 1.5em;
+}
+
+.contact-info-header-layout {
+    margin-left: -0.5714285714rem;
+    margin-right: -0.5714285714rem;
+    margin-bottom: -0.1428571429rem;
+    margin-top: -0.1428571429rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.contact-info-h2 {
+    padding-left: 0.5714285714rem;
+    padding-right: 0.5714285714rem;
+    padding-bottom: 0.1428571429rem;
+    padding-top: 0.1428571429rem;
+    color: #333333;
+    flex: 1 1 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-size: 1.2857142857em;
+    line-height: 1.3em;
+}
+
+.contact-info-p {
+    padding-left: 0.5714285714rem;
+    padding-right: 0.5714285714rem;
+    padding-bottom: 0.1428571429rem;
+    padding-top: 0.1428571429rem;
+    line-height: 1.5em;
+    margin: 0;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.contact-email-input {
+    width: 100%;
+}
+
+
+@media (min-width: 1000px) {
+    .address-step {
+        padding-top: 3em;
+    }
+}
+
+.address-step {
+    position: relative;
+    padding-top: 2em;
+    
+}
+
+.shipping-header {
+    margin-left: -0.5714285714rem;
+    margin-right: -0.5714285714rem;
+    margin-bottom: -0.1428571429rem;
+    margin-top: -0.1428571429rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+h2 {
+    h2 {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+}
+
+
+input {
+    // border: none;
+    background-color: transparent;
+    padding: 0;
+    font-size: inherit;
+ }

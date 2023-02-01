@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class CheckoutBaseController < StoreController
+  layout false
+  
   before_action :load_order
   around_action :lock_order
 

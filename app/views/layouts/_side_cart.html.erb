@@ -5,6 +5,7 @@
     <div class="cart-close" onclick="bag_toggle()">&#x2715;</div>
 </div>
 <div class="cart-body">
+    <%= debug @order %>
     <%= render 'carts/sidebar-cart' %>
 </div>
 <script>

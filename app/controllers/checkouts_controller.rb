@@ -5,6 +5,8 @@
 # checkout which has nothing to do with updating an order that this approach
 # is warranted.
 class CheckoutsController < CheckoutBaseController
+  layout false
+
   before_action :ensure_valid_state
   before_action :check_registration
   before_action :setup_for_current_state

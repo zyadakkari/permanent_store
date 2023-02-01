@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class CheckoutGuestSessionsController < CheckoutBaseController
+  layout false
+
   def create
     if params[:order][:email] =~ Devise.email_regexp && current_order.update(email: params[:order][:email])
       redirect_to checkout_path

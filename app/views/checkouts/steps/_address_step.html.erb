@@ -1,31 +1,30 @@
 <% order = form.object %>
 
 <div class="address-step">
-  <fieldset class="address-step__billing" id="billing">
-    <legend>
-      <%= t("spree.billing_address") %>
-    </legend>
-
-    <%= form.fields_for :bill_address do |bill_form| %>
-      <%= render(
+  
+      <%#= t("spree.billing_address") %>
+    <%#= form.fields_for :bill_address do |bill_form| %>
+      <%#= render(
         "checkouts/steps/address_step/address_inputs",
         form: bill_form,
         address_type: "billing",
         address: order.bill_address
       ) %>
-    <% end %>
-  </fieldset>
+    <%# end %>
+  
 
-  <fieldset class="address-step__shipping" id="shipping">
+  <div class="address-step__shipping" id="shipping">
     <legend>
-      <%= t('spree.shipping_address') %>
+      <div class="shipping-header">
+        <h2 class="contact-info-h2"><%= t('spree.shipping_address') %></h2>
+      </div>
     </legend>
 
     <%= form.fields_for :ship_address do |ship_form| %>
-      <%= label_tag 'order_use_billing', class: 'checkbox-input' do %>
-        <%= check_box_tag('order[use_billing]', 1, order.shipping_eq_billing_address?) %>
-        <%= t('spree.use_billing_address') %>
-      <% end %>
+      <%#= label_tag 'order_use_billing', class: 'checkbox-input' do %>
+        <%#= check_box_tag('order[use_billing]', 1, order.shipping_eq_billing_address?) %>
+        <%#= t('spree.use_billing_address') %>
+      <%# end %>
 
       <%= render(
         "checkouts/steps/address_step/address_inputs",
@@ -34,7 +33,7 @@
         address: order.ship_address
        ) %>
     <% end %>
-  </fieldset>
+  </div>
 
   <div class="address-step__actions">
     <%= form.button(

@@ -1,0 +1,182 @@
+@media (min-width: 750px) {
+    .delivery-step {
+        padding-top: 3em;
+    }
+
+    .section__header {
+        margin-bottom: 1.5em;
+    }
+}
+
+.delivery-step {
+    position: relative;
+    padding-top: 2em;
+}
+
+.section__header {
+    position: relative;
+    margin-bottom: 1em;
+}
+
+.section__header h2 {
+    color: #333333;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-size: 1.2857142857em;
+    line-height: 1.3em;
+    font-weight: normal;
+    margin: 0;
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.section__content {
+    zoom: 1;
+}
+
+.radio-wrapper:last-child, .checkbox-wrapper:last-child {
+    margin-bottom: 0;
+}
+.display-table .radio-wrapper, .display-table .checkbox-wrapper {
+    display: table;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.radio-wrapper, .checkbox-wrapper {
+    zoom: 1;
+    margin-bottom: 1em;
+    display: table-cell;
+    width: 100%;
+}
+
+.radio-input, .checkbox-input {
+    display: table;
+    padding-right: 0.75em;
+    white-space: nowrap;
+}
+
+.input-radio:checked {
+    border-width: 7px;
+}
+
+.input-checkbox:checked, .input-radio:checked {
+    border-color: #2a9dcc;
+}
+.content-box .input-checkbox, .content-box .input-radio {
+    border-color: #d9d9d9;
+    background-color: white;
+}
+.main .input-checkbox,  input.input-radio {
+    border-color: #d9d9d9;
+    background-color: white;
+}
+input[type="checkbox"], input[type="radio"] {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+input.input-radio {
+    border-radius: 50%;
+    border-right: 0.75em;
+}
+.input-checkbox, input.input-radio {
+    width: 18px;
+    height: 18px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    cursor: pointer;
+    vertical-align: -4px;
+    border: 1px solid;
+}
+
+.radio__label {
+    display: table-cell;
+    width: 100%;
+    cursor: pointer;
+    vertical-align: middle;
+
+}
+
+.radio__label__primary {
+    display: table-cell;
+    width: 100%;
+    cursor: inherit;
+    font-family: inherit;
+    vertical-align: middle;
+    padding-left: 0.75em;
+}
+
+.radio__label__accessory {
+    display: table-cell;
+    text-align: right;
+    padding-left: 0.75em;
+    white-space: nowrap;
+    font-weight: 500;
+    color: #333333;
+
+}
+
+@media (min-width: 750px) {
+    .delivery-step__actions {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-top: 1.5em;
+    }
+}
+
+.delivery-step__actions {
+    z-index: 2;
+    position: relative;
+    margin-top: 1.5em;
+    font-size: 14px;
+}
+
+@media (min-width: 750px) {
+    .delivery-btn {
+        float: left;
+    }
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    background-color: #2a9dcc;
+    background-clip: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px transparent solid;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    padding: 1.4em 1.7em;
+    text-align: center;
+    position: relative;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+}
+

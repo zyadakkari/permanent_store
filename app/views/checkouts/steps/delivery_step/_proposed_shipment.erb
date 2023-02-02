@@ -1,15 +1,17 @@
-<div class="proposed-shipment">
-  
 
-  <%= render "checkouts/steps/delivery_step/shipment_items", shipment_items: ship_form.object.manifest %>
 
-  <h3 class="proposed-shipment__secondary-title">
+  <%#= render "checkouts/steps/delivery_step/shipment_items", shipment_items: ship_form.object.manifest %>
+<div class="section__header">
+  <h2 class="proposed-shipment__secondary-title">
     <%= t('spree.shipping_method') %>:
-  </h3>
+  </h2>
+</div>
 
+<div class="section__content">
   <%= render(
     "checkouts/steps/delivery_step/shipping_methods",
     form: ship_form,
     shipping_rates: ship_form.object.shipping_rates
   ) %>
 </div>
+

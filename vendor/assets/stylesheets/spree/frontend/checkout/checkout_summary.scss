@@ -11,6 +11,7 @@
         flex-direction: column;
         height: calc(100vh - 8em);
         width: 100%;
+        font-size: 14px;
     }
 }
 
@@ -27,12 +28,25 @@
     z-index: 2;
 }
 
-.checkout-order--items-table {
+table {
     border-collapse: collapse;
     border-spacing: 0;
     font-size: 1em;
-    width: 100%;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
     
+}
+
+
+.checkout-order--items-table {
+    
+    width: 100%;
+    margin-top: 0.75em;
+    margin-bottom: 1.5em;
+    position: relative;
+    font-size: 14px;
 }
 
 thead {
@@ -40,23 +54,27 @@ thead {
     vertical-align: middle;
     border-color: inherit;
     
+    
 }
 
 .checkout-order--items-table tr {
     display: table-row;
     vertical-align: inherit;
     border-color: inherit;
+    font-size: 14px;
 }
 
 .checkout-table-head th {
     white-space: nowrap;
     font-weight: 500;
     color: #333333;
+    font-size: 14px;
 }
 
 .checkout-order--items-table th, .checkout-order--items-table td {
     padding-top: 0;
     padding-bottom: 0;
+    font-size: 14px;
 }
 
 td:first-child, th:first-child {
@@ -108,14 +126,17 @@ tbody {
     display: table-row-group;
     vertical-align: middle;
     border-color: inherit;
+    
 }
 
 .product-row:first-child td {
     padding-top: 0;
+    font-size: 14px;
 }
 
 .product-row td {
     padding-top: 1em;
+    font-size: 14px;
 }
 .checkout-order--items-table td {
     border-color: #fad9d9;
@@ -142,12 +163,14 @@ td, th {
 td, th {
     padding: 0;
     font-weight: normal;
+    
 }
 
 
 
 .order-item__desc, .order-item__price, .order-item__quantity {
     padding-left: 1em;
+    font-size: 14px;
 }
 
 td {
@@ -190,6 +213,7 @@ td {
     display: block;
     font-weight: 500;
     text-align: left;
+    font-size: 14px;
     
 }
 
@@ -219,12 +243,14 @@ td:last-child, th:last-child {
         -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
+        font-size: 14px;
     }
 }
 
 
 .total-line-table {
     width: 100%;
+    font-size: 14px;
 }
 
 .total-line-table {
@@ -259,11 +285,13 @@ hr.summary {
     padding-left: 1.5em;
     text-align: right;
     white-space: nowrap;
+    font-size: 14px;
 }
 
 .order-summary__emphasis {
     font-weight: 500;
     color: #323232;
+    font-size: 14px;
 }
 
 tfoot {
@@ -296,4 +324,22 @@ tfoot {
     font-weight: 500;
     letter-spacing: -0.04em;
     line-height: 1em;
+    
+}
+
+@media (min-width: 750px) {
+    .step__footer__previous {
+        margin-right: 1em;
+        float: right;
+        
+    }
+}
+
+.step__footer__previous {
+    display: block;
+}
+
+a.step__footer__previous {
+    color: #2a9dcc;
+    text-decoration: none;
 }

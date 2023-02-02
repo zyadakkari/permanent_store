@@ -34,24 +34,27 @@
        ) %>
     <% end %>
   </div>
+  
+  <% if spree_current_user %>
+    <%= label_tag 'save-user-address', class: 'checkbox-input' do %>
+      <%= check_box_tag(
+        :save_user_address,
+        1,
+        spree_current_user.respond_to?(:persist_order_address),
+        id: 'save-user-address'
+      ) %>
+      <%= I18n.t("spree.save_my_address") %>
+    <% end %>
+  <% end %>
 
-  <div class="address-step__actions">
-    <%= form.button(
-      I18n.t("spree.save_and_continue"),
-      class: 'button-primary',
+  <div class="delivery-step__actions">
+    
+  
+  <%= form.button(
+      "Continue to shipping",
+      class: 'btn delivery-btn',
       name: :commit
     ) %>
-
-    <% if spree_current_user %>
-      <%= label_tag 'save-user-address', class: 'checkbox-input' do %>
-        <%= check_box_tag(
-          :save_user_address,
-          1,
-          spree_current_user.respond_to?(:persist_order_address),
-          id: 'save-user-address'
-        ) %>
-        <%= I18n.t("spree.save_my_address") %>
-      <% end %>
-    <% end %>
+    <%= link_to "Return to cart", edit_cart_path, class: "step__footer__previous" %>
   </div>
 </div>

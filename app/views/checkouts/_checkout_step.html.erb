@@ -24,7 +24,7 @@
                 <bdo dir="lrt"><%= order.email %></bdo>
               </div>
               <div role="cell" class="review-block__link">
-                <%= link_to "Edit", checkout_state_path(:address), class: "review-block__link" %>
+                <%= link_to "Change", checkout_state_path(:address), class: "review-block__link" %>
               </div>
             </div>
           </div>
@@ -36,7 +36,7 @@
                 <%= order.ship_address.address1 %>, <%= order.ship_address.city %>, <%= order.ship_address.zipcode %>, <%= order.ship_address.country.name %>
               </div>
               <div role="cell" class="review-block__link">
-                <%= link_to "Edit", checkout_state_path(:address), class: "review-block__link" %>
+                <%= link_to "Change", checkout_state_path(:address), class: "review-block__link" %>
               </div>
             </div>
           </div>

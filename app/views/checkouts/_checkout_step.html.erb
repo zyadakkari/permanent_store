@@ -11,8 +11,40 @@
       <%= form.label :email, "Email:" %>
       <%= form.email_field :email, required: true, placeholder: 'Email', class: 'field-input' %>
     </div>
-  <% end %>
   </div>
+  <% end %>
+  <% if order.state == "delivery" %>
+    <div class="checkout-delivery-step-summary">
+      <div class="content-box">
+        <div role="table" class="content-box__row">
+          <div role="row" class="review-block">
+            <div class="review-block__inner">
+              <div role="rowheader" class="review-block__header">Contact</div>
+              <div role="cell" class="review-block__content">
+                <bdo dir="lrt"><%= order.email %></bdo>
+              </div>
+              <div role="cell" class="review-block__link">
+                <%= link_to "Edit", checkout_state_path(:address), class: "review-block__link" %>
+              </div>
+            </div>
+          </div>
+          
+          <div role="row" class="review-block">
+            <div class="review-block__inner">
+              <div role="rowheader" class="review-block__header">Ship to</div>
+              <div role="cell" class="review-block__content">
+                <%= order.ship_address.address1 %>, <%= order.ship_address.city %>, <%= order.ship_address.zipcode %>, <%= order.ship_address.country.name %>
+              </div>
+              <div role="cell" class="review-block__link">
+                <%= link_to "Edit", checkout_state_path(:address), class: "review-block__link" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  <% end %>
 
   <%= render "checkouts/steps/#{order.state}_step", form: form, differentiator: @differentiator %>
 <% end %>

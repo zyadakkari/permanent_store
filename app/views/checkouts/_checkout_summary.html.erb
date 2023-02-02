@@ -6,7 +6,7 @@
     classes: ['order-items--summary']
   )%>
 
-  <hr>
+  <hr class="summary">
 
   <div class="checkout-total-lines">
     <table class="total-line-table">  
@@ -31,14 +31,6 @@
           <td class="total-line-price">
             <span class="order-summary__emphasis">
               <%= order.display_ship_total.to_html %>
-            </span>
-          </td>
-        </tr>
-        <tr class="total-line">
-          <th class="total-line-name" scope="row">Tax</th>
-          <td class="total-line-price">
-            <span class="order-summary__emphasis">
-              <%= order.display_tax_total.to_html %>
             </span>
           </td>
         </tr>

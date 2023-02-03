@@ -13,7 +13,7 @@
     </div>
   </div>
   <% end %>
-  <% if order.state == "delivery" %>
+  <% if order.state == "delivery" || order.state == "payment" %>
     <div class="checkout-delivery-step-summary">
       <div class="content-box">
         <div role="table" class="content-box__row">
@@ -37,6 +37,18 @@
               </div>
               <div role="cell" class="review-block__link">
                 <%= link_to "Change", checkout_state_path(:address), class: "review-block__link" %>
+              </div>
+            </div>
+          </div>
+
+          <div role="row" class="review-block">
+            <div class="review-block__inner">
+              <div role="rowheader" class="review-block__header">Method</div>
+              <div role="cell" class="review-block__content">
+                <%= order.shipments.first.shipping_method.name %>
+              </div>
+              <div role="cell" class="review-block__link">
+                <%= link_to "Change", checkout_state_path(:delivery), class: "review-block__link" %>
               </div>
             </div>
           </div>

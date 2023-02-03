@@ -1,18 +1,21 @@
-<ul class="payment-method-selector">
-  <% methods.each do |method| %>
-    <li>
-      <% "order_payments_attributes__payment_method_id_#{method.id}".tap do |id| %>
-        <%= label_tag id, class: 'radio-input' do %>
-          <%= radio_button_tag(
-            "order[payments_attributes][][payment_method_id]",
-            method.id,
-            method == @order.available_payment_methods.first,
-            id: id
-          ) %>
-
-          <%= t(method.name, scope: 'spree.payment_methods', default: method.name) %>
+<div class="content-box">
+  <div class="content-box__row">
+      <% methods.each do |method| %>
+        <% "order_payments_attributes__payment_method_id_#{method.id}".tap do |id| %>
+          <%= label_tag id, class: 'radio-wrapper' do %>
+            <div class="radio-input">
+              <%= radio_button_tag(
+                "order[payments_attributes][][payment_method_id]",
+                method.id,
+                method == @order.available_payment_methods.first,
+                id:  "payment_method_#{method.id}",
+                class: 'input-radio',
+                onclick: "togglePay(#{method.id})"
+              ) %>
+              <span class="radio__label radio__label__primary"><%= t(method.name, scope: 'spree.payment_methods', default: method.name) %></span>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
-    </li>
-  <% end %>
-</ul>
+  </div>
+</div>

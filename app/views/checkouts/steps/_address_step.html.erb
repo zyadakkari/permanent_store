@@ -1,6 +1,6 @@
 <% order = form.object %>
 
-<div class="address-step">
+
   
       <%#= t("spree.billing_address") %>
     <%#= form.fields_for :bill_address do |bill_form| %>
@@ -13,12 +13,10 @@
     <%# end %>
   
 
-  <div class="address-step__shipping" id="shipping">
-    <legend>
-      <div class="shipping-header">
-        <h2 class="contact-info-h2"><%= t('spree.shipping_address') %></h2>
+  <div class="delivery-step" id="shipping">
+      <div class="section__header">
+        <h2 class="proposed-shipment__secondary-title"><%= t('spree.shipping_address') %></h2>
       </div>
-    </legend>
 
     <%= form.fields_for :ship_address do |ship_form| %>
       <%#= label_tag 'order_use_billing', class: 'checkbox-input' do %>
@@ -57,4 +55,4 @@
     ) %>
     <%= link_to "Return to cart", edit_cart_path, class: "step__footer__previous" %>
   </div>
-</div>
+

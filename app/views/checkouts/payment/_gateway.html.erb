@@ -1,52 +1,72 @@
 <div class="gateway-payment-method">
+  <div class="content-box">
   <% param_prefix = "payment_source[#{payment_method.id}]" %>
-
-  <div class="text-input">
-    <% "name_on_card_#{payment_method.id}".tap do |id| %>
-      <%= label_tag id, "#{t('spree.name_on_card')}:" %>
-
-      <%= text_field_tag "#{param_prefix}[name]",
-        @order.billing_name,
-        id: id,
-        autocomplete: "cc-name"
-      %>
-    <% end %>
+  <div class="gateway-payment-subfields">
+    <div class="fieldset">
+      <div class="field">
+        <div class="field__input-wrapper">
+          <% "name_on_card_#{payment_method.id}".tap do |id| %>
+          <%= label_tag id, "#{t('spree.name_on_card')}:", class: "field__label" %>
+          <div class="field__input">
+            <%= text_field_tag "#{param_prefix}[name]",
+              @order.billing_name,
+              id: id,
+              autocomplete: "cc-name"
+            %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="field">
+        <div class="field__input-wrapper">
+          <% "card_number_#{payment_method.id}".tap do |id| %>
+          <%= label_tag id, "#{t('spree.card_number')}:", class: "field__label" %>
+          <div class="field__input">
+            <%= text_field_tag "#{param_prefix}[number]",
+              nil,
+              id: id,
+              autocomplete: "cc-number"
+            %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="field--half field">
+        <div class="field__input-wrapper">
+        <% "card_expiry_#{payment_method.id}".tap do |id| %>
+          <%= label_tag id, "#{t('spree.expiration')}:", class: "field__label" %>
+          <div class="field__input">
+            <%= text_field_tag "#{param_prefix}[expiry]",
+              nil,
+              id: id,
+              placeholder: "MM / YY"
+            %>
+          </div>
+        <% end %>
+        </div>
+      </div>
+      <div class="field--half field">
+        <div class="field__input-wrapper">
+        <% "card_code_#{payment_method.id}".tap do |id| %>
+          <%= label_tag id, "Security code", class: "field__label" %>
+          <div class="field__input">
+            <%= text_field_tag "#{param_prefix}[verification_value]",
+              nil,
+              id: id
+            %>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
   </div>
+  
 
-  <div class="text-input">
-    <% "card_number_#{payment_method.id}".tap do |id| %>
-      <%= label_tag id, "#{t('spree.card_number')}:" %>
+  
 
-      <%= text_field_tag "#{param_prefix}[number]",
-        nil,
-        id: id,
-        autocomplete: "cc-number"
-      %>
-    <% end %>
-  </div>
 
-  <div class="text-input">
-    <% "card_expiry_#{payment_method.id}".tap do |id| %>
-      <%= label_tag id, "#{t('spree.expiration')}:" %>
 
-      <%= text_field_tag "#{param_prefix}[expiry]",
-        nil,
-        id: id,
-        placeholder: "MM / YY"
-      %>
-    <% end %>
-  </div>
 
-  <div class="text-input">
-    <% "card_code_#{payment_method.id}".tap do |id| %>
-      <%= label_tag id, "#{t('spree.card_code')}:" %>
-
-      <%= text_field_tag "#{param_prefix}[verification_value]",
-        nil,
-        id: id
-      %>
-    <% end %>
-  </div>
 
   <% if @order.bill_address %>
     <%= fields_for "#{param_prefix}[address_attributes]", @order.bill_address do |f| %>
@@ -55,4 +75,5 @@
   <% end %>
 
   <%= hidden_field_tag "#{param_prefix}[cc_type]", '', id: "cc_type", class: 'ccType' %>
+  </div>
 </div>

@@ -15,12 +15,15 @@
       <%= render 'checkouts/steps/payment_step/existing_cards', wallet_payment_sources: @wallet_payment_sources %>
     <% end %>
   
-
-    <%= button_tag(
-      I18n.t("spree.save_and_continue"),
-      class: 'button-primary',
-      name: :commit
-    ) %>
+    <div class="delivery-step__actions">
+      <%= button_tag(
+        I18n.t("spree.save_and_continue"),
+        class: 'btn delivery-btn',
+        name: :commit
+      ) %>
+      <%= link_to "Return to shipping", checkout_state_path(:delivery), class: "step__footer__previous" %>
+    </div>
+    
   </div>
 </div>
 

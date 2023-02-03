@@ -1,0 +1,88 @@
+.gateway-payment-subfields {
+    margin-bottom: 0;
+    display: table;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top: 1px solid #d9d9d9;
+    zoom: 1;
+    margin-bottom: 1em;
+    background-color: #fafafa;
+    padding: 1.1428571429em;
+    position: relative;
+}
+
+.fieldset {
+    margin: -0.4285714286em;
+    zoom: 1;
+}
+
+.field {
+    width: 100%;
+    float: left;
+    padding: 0.4285714286em;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.field__input-wrapper {
+    position: relative;
+}
+
+.field__label {
+    will-change: transform;
+    padding-right: 2.8571428571rem;
+    transform: none;
+    opacity: 1;
+    color: #737373;
+    font-size: 0.8571428571em;
+    font-weight: normal;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-top: 0.4285714286em;
+    margin-left: 1px;
+    padding: 0 0.9166666667em;
+    z-index: 10;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+    pointer-events: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: left;
+
+}
+
+.field__input input {
+    padding: 1.5em 0.8em 0.38em;
+    height: auto;
+    padding-right: 2.8571428571rem;
+    background-color: white;
+    color: #333333;
+    border-color: #d9d9d9;
+    min-height: 3.1428571429em;
+    overflow: hidden;
+    position: relative;
+    // border: 1px transparent solid;
+    background-clip: padding-box;
+    border-radius: 5px;
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    word-break: normal;
+    line-height: inherit;
+}
+
+.field--half {
+    width: 50%;
+}

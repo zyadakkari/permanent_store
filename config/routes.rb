@@ -39,7 +39,7 @@ Rails.application.routes.draw do
 
   resource :account, controller: 'users'
 
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show, :items_in_cart]
 
   resources :cart_line_items, only: :create
 

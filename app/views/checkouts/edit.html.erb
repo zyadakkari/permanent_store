@@ -10,8 +10,24 @@
         <%= render "checkout_step", order: @order %>
       </div>
     </div>
+    <footer class="checkout__footer">
+      <ul class="policy-list" role="list">
+        <li class="policy-list-item">
+          <a class="policy-link">Refund Policy</a>
+        </li>
+        <li class="policy-list-item">
+          <a class="policy-link">Shipping Policy</a>
+        </li>
+        <li class="policy-list-item">
+          <a class="policy-link">Privacy Policy</a>
+        </li>
+        <li class="policy-list-item">
+          <a class="policy-link">Terms of Service</a>
+        </li>
+      </ul>
+    </footer>
   </div>
-  <div class="checkout--aside">
+  <div class="checkout--aside" role="contentinfo">
     <% if @order.state != "confirm" %>
       <div class="checkout__summary">
         <%= render "checkout_summary", order: @order %>

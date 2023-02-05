@@ -1,4 +1,5 @@
 <article class="cart-page">
+  <%= @order.inspect %>
   <% if @order.line_items.empty? %>
     <%= render 'carts/cart_empty' %>
   <% else %>

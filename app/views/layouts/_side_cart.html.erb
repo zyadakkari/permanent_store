@@ -1,12 +1,54 @@
-<div class="cart-header">
-    <div class="cart-link" id="link-to-cart">
-        <%= link_to "Bag", edit_cart_path, class: "cart" %>
+<% order = current_order %>
+<div class="cart--inner">
+    <div class="cart-header">
+        <p class="cart-link" id="link-to-cart">
+            <%= link_to "Bag", edit_cart_path, class: "cart" %>
+        </p>
+        <button class="cart-close" onclick="bag_toggle()">&#x2715;</button>
     </div>
-    <div class="cart-close" onclick="bag_toggle()">&#x2715;</div>
-</div>
-<div class="cart-body">
-    <%= debug @order %>
-    <%= render 'carts/sidebar-cart' %>
+    <div class="cart--content">
+        <% if order.line_items.any? %>
+        <div class="cart--items">
+                <% order.line_items.each do |line_item| %>
+                    <div class="cart--item">
+                        <div class="cart--item-image">
+                            <div class="bag-media">
+                                <%= link_to(
+                                    render(ImageComponent.new(
+                                    image: line_item.variant.gallery.images.first || line_item.variant.product.gallery.images.first,
+                                    size: :small
+                                    )),
+                                    line_item.variant.product
+                                ) %>
+                            </div>
+                        </div>
+                        <div class="cart--item-info">
+                            <h3 class="cart--item-name">
+                                <%= link_to line_item.variant.product.name, product_path(line_item.id) %>
+                            </h3>
+                            <div class="cart--item-table">
+                                <div>Color: </div>
+                                <div><%= line_item.product.property("Color") %></div>
+                                <div>Size: </div>
+                                <div><%= line_item.product.property("Size") %></div>
+                                <div>Price: </div>
+                                <div><%= line_item.display_amount.to_html %></div>
+                            </div>
+                            <button class="cart--item-remove">Remove</button>
+                        </div>
+                    </div>
+                <% end %>
+        </div>
+        <% else %>
+            <div class="cart--empty">
+                <p class="cart--empty-text">Your bag is empty</p>
+            </div>
+        <% end %>
+    </div>
+    <div class="cart--footer">
+        <%= render 'carts/sidebar-cart' %>
+    </div>
+    
 </div>
 <script>
     Solidus.fetch_cart('<%= j cart_link_path %>')

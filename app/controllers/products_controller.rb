@@ -4,7 +4,7 @@ class ProductsController < StoreController
   before_action :load_product, only: :show
   before_action :load_taxon, only: :index
 
-  include OrderConcern
+  # include OrderConcern
 
   helper 'spree/products', 'spree/taxons', 'taxon_filters'
 
@@ -36,6 +36,7 @@ class ProductsController < StoreController
     else
       render 'carts/edit'
     end
+
   end
   
 
@@ -61,4 +62,5 @@ class ProductsController < StoreController
   def load_taxon
     @taxon = Spree::Taxon.find(params[:taxon]) if params[:taxon].present?
   end
+
 end

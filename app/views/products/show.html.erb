@@ -1,7 +1,7 @@
 <% @body_id = 'product-details' %>
 
 <% cache [I18n.locale, current_pricing_options, @product] do %>
-  <div class="product-page" itemscope itemtype="http://schema.org/Product">
+  <div class="product-page" itemscope itemtype="http://schema.org/Product">   
     <div class="product--gallery">
       <div class="product-page--images">
         <%= render 'product_images_carousel', product: @product %>
@@ -59,7 +59,7 @@
           </button>
           <div class="accordion--content is-active" >
             <%= render 'product_info', product: @product %>
-            <%= render 'product_properties', product_properties: @product_properties %>
+            <%#= render 'product_properties', product_properties: @product_properties %>
           </div>
         </div>
         <div class="accordion">
@@ -148,7 +148,7 @@
           <div class="accordion--content"></div>
         </div>
         
-        <%= render 'product_taxons', product: @product %>
+        <%#= render 'product_taxons', product: @product %>
       </div>
       
       <%= render 'product_promotions', product: @product %>
@@ -192,7 +192,7 @@
           </button>
           <div class="mobile--accordion--content is-active" >
             <%= render 'product_info', product: @product %>
-            <%= render 'product_properties', product_properties: @product_properties %>
+            <%#= render 'product_properties', product_properties: @product_properties %>
           </div>
         </div>
         <div class="accordion">
@@ -281,7 +281,7 @@
           <div class="mobile--accordion--content"></div>
         </div>
         
-        <%= render 'product_taxons', product: @product %>
+        <%#= render 'product_taxons', product: @product %>
       </div>
       
       <%= render 'product_promotions', product: @product %>

@@ -4,6 +4,7 @@ class StoreController < Spree::BaseController
   include Spree::Core::ControllerHelpers::Pricing
   include Spree::Core::ControllerHelpers::Order
   include Taxonomies
+  include OrderConcern
 
   layout 'storefront'
 

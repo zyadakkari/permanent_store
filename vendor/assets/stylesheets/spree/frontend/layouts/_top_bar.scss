@@ -79,6 +79,7 @@ button {
 
 span .cart-toggle--dot, .bag {
     padding: 2px;
+    font-size: 12px;
 }
 
 @media (min-width: 480px) {
@@ -91,4 +92,32 @@ span .cart-toggle--dot, .bag {
     .bag {
         display: none;
     }
+}
+
+.cart-toggle--dot {
+    margin-left: 0.5rem;
+    transform: scale(1);
+    margin-top: -2px;
+    transition: all .3s var(--ease-out-expo);
+}
+
+@media (min-width: 940px) {
+    .cart-toggle--dot {
+        margin-right: 10px;
+    }
+}
+
+.cart-toggle--dot {
+    display: flex;
+    height: 17px;
+    width: 17px;
+    transform-origin: center;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 9999px;
+    border-width: 2px;
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
+    line-height: 2;
 }

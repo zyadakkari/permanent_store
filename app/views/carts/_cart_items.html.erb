@@ -9,13 +9,8 @@
   )
 %>
 
-<section class="cart-items">
-  <div class="cart-items-header">
-    <h2 class="cart-items-header__title">Item</h2>
-    <h2 class="cart-items-header__title">Price</h2>
-    <h2 class="cart-items-header__title">Quantity</h2>
-    <h2 class="cart-items-header__title">Subtotal</h2>
-  </div>
+<div class="cart-items">
+  
 
   <%= render(
     partial: 'carts/cart_item',
@@ -27,4 +22,4 @@
   <% if is_order_empty %>
     <%= render 'carts/cart_adjustments' %>
   <% end %>
-</section>
+</div>

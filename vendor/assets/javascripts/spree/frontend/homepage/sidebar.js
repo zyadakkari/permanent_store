@@ -10,36 +10,30 @@ function toggleMenu(n) {
             }
         }
     }
-    // for(let i = 0; i < buttons.length; i++) {
-    //     if((i == n) && (!buttons[i].classList.contains("expanded"))) {
-    //         buttons[i].classList.add("expanded");
-    //     } else {
-    //         if(buttons[i].classList.contains("expanded")) {
-    //             buttons[i].classList.remove("expanded");
-    //         }
-    //     }
-    // }
+ 
 }
 
 function toggleDesktop(n) {
     let menus = Array.from(document.getElementsByClassName("sidebar--items"));
-    // let buttons = Array.from(document.getElementsByClassName("sidebar--title"));
+    let parents = Array.from(document.getElementsByClassName("sidebar--title"));
     for(let i = 0; i < menus.length; i++) {
-        if((i == n) && (!menus[i].classList.contains("is-active"))) {
-            menus[i].classList.add("is-active");
+        // if((i == n) && (!menus[i].classList.contains("is-active"))) {
+        //     menus[i].classList.add("is-active");
+        // } else {
+        //     if(menus[i].classList.contains("is-active")) {
+        //         menus[i].classList.remove("is-active");
+        //     }
+        // }
+        if (i == n && menus[i].style.height == "0px") {
+            menus[i].style.height = "auto"
+            menus[i].style.opacity = "1"
+            parents[i].style.color = "black";
         } else {
-            if(menus[i].classList.contains("is-active")) {
-                menus[i].classList.remove("is-active");
+            if (menus[i].style.height == "auto") {
+                menus[i].style.height = "0px"
+                menus[i].style.opacity = "0"
+                parents[i].style.color = "var(--dimmed)";
             }
         }
     }
-    // for(let i = 0; i < buttons.length; i++) {
-    //     if((i == n) && (!buttons[i].classList.contains("expanded"))) {
-    //         buttons[i].classList.add("expanded");
-    //     } else {
-    //         if(buttons[i].classList.contains("expanded")) {
-    //             buttons[i].classList.remove("expanded");
-    //         }
-    //     }
-    // }
 }

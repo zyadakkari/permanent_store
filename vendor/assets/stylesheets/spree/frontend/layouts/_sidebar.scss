@@ -3,7 +3,7 @@
         display: flex;
         flex-direction: column;
         height: 100vh;
-        transition: height .5s var(--ease-out-expo);
+        // transition: height .5s var(--ease-out-expo);
         position: sticky;
         width: 100%;
         flex-shrink: 0;
@@ -220,17 +220,16 @@ li {
     }
 
     .sidebar--items {
-        display: none;
         overflow-y: auto;
-    }
-
-    .sidebar--items.is-active {
-        display: block;
     }
 }
 
+
+
 .sidebar--items {
     overflow-y: auto;
+    transition: height 1s ease-out;
+    // transition: opacity 1s ease-out;
 }
 
 .sidebar-nav>ul>li li {
@@ -244,6 +243,14 @@ li {
 a {
     text-decoration: none;
     background-color: transparent;
+}
+
+li a:hover, span.sidebar--title:hover {
+    color: black;
+}
+
+li a:focus, span.sidebar--title:focus {
+    color: black;
 }
 
 .sidebar-nav>ul>li .sidebar--categories {

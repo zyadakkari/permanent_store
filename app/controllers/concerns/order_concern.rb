@@ -7,7 +7,7 @@ module OrderConcern
     helper_method :current_order
   end
 
-  def current_order
+  def current_order(*args)
     @order ||= Spree::Order.find_or_initialize_by(guest_token: cookies.signed[:guest_token], state: "cart")
   end
 

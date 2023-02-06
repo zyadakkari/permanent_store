@@ -137,3 +137,31 @@ button.cart-close {
     opacity: 1;
     transition: all .25s linear;
 }
+
+.edit-cart-img {
+    height: 40vh;
+    object-fit: contain;
+    width: auto;
+}
+
+.cart-img {
+    object-fit: contain;
+    width: auto;
+}
+
+input.cart--item-remove {
+    appearance: none;
+    border-style: none;
+    background-color: transparent;
+}
+
+.to-checkout-btn {
+    background-color: black;
+    color: white;
+    padding: 20px 20px;
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+
+}

@@ -34,7 +34,7 @@
                                 <div>Price: </div>
                                 <div><%= line_item.display_amount.to_html %></div>
                             </div>
-                            <button class="cart--item-remove">Remove</button>
+                            <button class="cart--item-remove"><%= link_to "Remove", edit_cart_path %></button>
                         </div>
                     </div>
                 <% end %>

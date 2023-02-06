@@ -2,13 +2,13 @@
 
 <footer class="cart-footer">
   <p class="cart-footer__total">
-    <%= t('spree.total') %>: <strong><%= order.display_total %></strong>
+     <%#= t('spree.total') %> <strong><%#= order.display_total %></strong>
   </p>
 
   <div class="cart-footer__primary-action">
     <%= order_form.button(
-      I18n.t('spree.checkout'),
-      class: 'button-primary',
+      "<span class='to-check-text'>Checkout</span><span class='to-check-price'>#{order.display_total}</span>".html_safe,
+      class: 'to-checkout-btn',
       id: 'checkout-link',
       name: :checkout
     ) %>

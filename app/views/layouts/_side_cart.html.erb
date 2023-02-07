@@ -1,4 +1,4 @@
-<% order = current_order %>
+<% order = current_order_bag %>
 <div class="cart--inner">
     <div class="cart-header">
         <p class="cart-link" id="link-to-cart">
@@ -7,7 +7,7 @@
         <button class="cart-close" onclick="bag_toggle()">&#x2715;</button>
     </div>
     <div class="cart--content">
-        <% if order.line_items.any? %>
+        <% if !order.nil? && order.line_items.any? %>
         <div class="cart--items">
                 <% order.line_items.each do |line_item| %>
                     <div class="cart--item">

@@ -319,6 +319,11 @@ ul.policy-list {
     padding-inline-start: 40px;
 }
 
+ul.policy-list > li {
+    display: inline-block;
+    margin: 5px;
+}
+
 .policy-list__item {
     float: left;
     font-size: 0.8571428571em;

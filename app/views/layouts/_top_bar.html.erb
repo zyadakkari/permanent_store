@@ -15,7 +15,13 @@
   <button class="cart-toggle"  onclick="bag_toggle()">
     <span class="bag">Bag</span>
     <span class="cart-toggle--dot">
-      <span><%= current_order.line_items.count %></span>
+      <span>
+        <% if current_order_bag.nil? %>
+          0
+        <% else %>
+          <%= current_order_bag.line_items.count %>
+        <% end %>
+      </span>
     </span>
   </button>
 

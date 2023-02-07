@@ -6,4 +6,11 @@
 //
 //= require rails-ujs
 //= require_tree .
-console.log("Hello World from Spree")
+window.addEventListener('load', function () {
+    var loader = document.querySelector(".loader");
+    loader.style.opacity = 0;
+    setTimeout(function () {
+      loader.style.display = "none";
+    }, 1000);
+  });
+  

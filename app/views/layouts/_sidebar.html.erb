@@ -60,32 +60,32 @@
       <div class="sidebar--items sidebar-items-brand" style="height: 0; opacity: 0;">
         <ul class="sidebar-brand-all">
           <li class="sidebar-brand-all-item">
-          <%= link_to 'About Permanence', about_path %>
+          <%= link_to 'About Permanence', home_about_path %>
           </li>
           <li class="sidebar-brand-all-item">
-            <a href="#">Code of conduct</a>
+            <%= link_to 'Code of Conduct', home_code_of_conduct_path %>
           </li>
         </ul>
       </div>
     </li>
     <li class="nav-item-sidebar sidebar-obsessions">
-      <a class="sidebar--title">Permanent Archive</a>
+      <%= link_to 'Permanent Archive', home_permanent_archive_path, class: 'sidebar--title' %>
     </li>
     <li class="nav-item-sidebar sidebar-customer-service">
       <span class="sidebar--title sidebar--title-expand" onclick="toggleDesktop(2)">Customer service</span>
       <div class="sidebar--items sidebar-items-cust" style="height: 0; opacity: 0; transition: height 1s ease-out;">
         <ul class="sidebar-customer-service-all">
           <li class="sidebar-customer-service-all-item">
-            <a href="#">Frequently Asked Questions</a>
+            <%= link_to 'Frequently Asked Questions', home_faq_path %>
           </li>
           <li class="sidebar-customer-service-all-item">
-            <a href="#">Shipping Information</a>
+            <%= link_to 'Shipping', home_shipping_path %>
           </li>
           <li class="sidebar-customer-service-all-item">
-            <a href="#">Terms & Conditions</a>
+            <%= link_to 'Terms & Conditions', home_terms_of_service_path %>
           </li>
           <li class="sidebar-customer-service-all-item">
-            <a href="#">Privacy Policy</a>
+            <%= link_to 'Privacy Policy', home_privacy_policy_path %>
           </li>
         </ul>
       </div>
@@ -116,7 +116,7 @@
       <li class="sidebar--mobile-title" onclick="toggleMenu(0);">Shop</li>
       <li class="sidebar--mobile-title" style="margin-left: 101px;" onclick="toggleMenu(2);">Brand</li>
       <li class="sidebar--mobile-title" style="margin-left: 101px;" onclick="toggleMenu(1);">
-        <a href="#">Permanent Archive</a>
+        <%= link_to 'Permanent Archive', home_permanent_archive_path %>
       </li>
       <li class="sidebar--mobile-title" style="margin-left: 101px;" onclick="toggleMenu(3);">Customer service</li>
     </ul>
@@ -163,30 +163,24 @@
       <ul class="sidebar--mobile-submenu"></ul>
       <ul class="sidebar--mobile-submenu">
         <li class="sidebar-shop-all-item-mobile">
-          <a href="#">About Permanence</a>
+          <%= link_to 'About', home_about_path %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <a href="#">Code of conduct</a>
-        </li>
-        <li class="sidebar-shop-all-item-mobile">
-          <a href="#">Press</a>
+          <%= link_to 'Code of Conduct', home_code_of_conduct_path %>
         </li>
       </ul>
       <ul class="sidebar--mobile-submenu">
         <li class="sidebar-shop-all-item-mobile">
-          <a href="#">Frequently Asked Questions</a>
+          <%= link_to 'Frequently Asked Questions', home_faq_path %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <a href="#">Shipping Information</a>
+          <%= link_to 'Shipping', home_shipping_path %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <a href="#">Terms & Conditions</a>
+          <%= link_to 'Terms & Conditions', home_terms_of_service_path %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <a href="#">Newsletter</a>
-        </li>
-        <li class="sidebar-shop-all-item-mobile">
-          <a href="#">Privacy Policy</a>
+          <%= link_to 'Privacy Policy', home_privacy_policy_path %>
         </li>
       </ul>
     </div>

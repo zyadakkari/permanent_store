@@ -1,0 +1,43 @@
+.about-screen {
+    min-height: 100vh;
+}
+
+@media (min-width: 940px) {
+    .about-content {
+        margin-top: 200px;
+        margin-bottom: 200px;
+    }
+}
+
+@media (min-width: 768px) {
+    .about-content {
+        justify-content: center;
+    }
+
+    .about-content>div {
+        width: 340px;
+        text-align: center;
+    }
+}
+
+.about-content {
+    margin: 100px 10px;
+    display: flex;
+}
+
+.about-content>div {
+    width: 83.333333%;
+    max-width: 100%;
+}
+
+.about-content p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-height: 1px;
+}
+
+p {
+    margin: 0;
+    line-height: 14px;
+    line-height: 1.5;
+}

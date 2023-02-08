@@ -9,6 +9,15 @@ Rails.application.routes.draw do
 
   mount SolidusPaypalCommercePlatform::Engine, at: '/solidus_paypal_commerce_platform'
   root to: 'home#index'
+  get 'home/about'
+  get 'home/customer_service'
+  get 'home/privacy_policy'
+  get 'home/faq'
+  get 'home/terms_of_service'
+  get 'home/contact'
+  get 'home/shipping'
+  get 'home/code_of_conduct'
+  get 'home/permanent_archive'
 
   devise_for(:user, {
     class_name: 'Spree::User',
@@ -25,14 +34,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:edit, :update]
 
-  get 'about', to: 'static_pages#about'
-  get 'customer_service', to: 'static_pages#customer_service'
-  get 'privacy_policy', to: 'static_pages#privacy_policy'
-  get 'faq', to: 'static_pages#faq'
-  get 'terms_of_service', to: 'static_pages#terms_of_service'
-  get 'contact', to: 'static_pages#contact'
-  get 'shipping', to: 'static_pages#shipping'
-  get 'code_of_conduct', to: 'static_pages#code_of_conduct'
+  
+  
   
 
 

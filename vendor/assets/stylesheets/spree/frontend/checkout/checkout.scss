@@ -11,7 +11,7 @@
 
 @media (min-width: 1000px) {
     .checkout {
-        padding: 0 5%;
+        // padding: 0 5%;
 
     }
 
@@ -22,12 +22,14 @@
     .checkout-main {
         width: 52%;
         padding-right: 6%;
+        padding-left: 5%;
         float: left;
     }
 
     .checkout--aside {
         width: 38%;
         padding-left: 4%;
+        padding-right: 5%;
         background-position: left top;
         float: right;
     }

@@ -15,7 +15,7 @@ function toggleMenu(n) {
 
 function toggleDesktop(n) {
     let menus = Array.from(document.getElementsByClassName("sidebar--items"));
-    let parents = Array.from(document.getElementsByClassName("sidebar--title"));
+    let parents = Array.from(document.getElementsByClassName("sidebar--title-expand"));
     for(let i = 0; i < menus.length; i++) {
         // if((i == n) && (!menus[i].classList.contains("is-active"))) {
         //     menus[i].classList.add("is-active");

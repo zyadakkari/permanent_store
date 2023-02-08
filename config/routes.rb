@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'static_pages/show'
   # This line mounts Solidus's routes at the root of your application.
   # This means, any requests to URLs such as /products, will go to Spree::ProductsController.
   # If you would like to change where this engine is mounted, simply change the :at option to something different.
@@ -23,6 +24,17 @@ Rails.application.routes.draw do
   })
 
   resources :users, only: [:edit, :update]
+
+  get 'about', to: 'static_pages#about'
+  get 'customer_service', to: 'static_pages#customer_service'
+  get 'privacy_policy', to: 'static_pages#privacy_policy'
+  get 'faq', to: 'static_pages#faq'
+  get 'terms_of_service', to: 'static_pages#terms_of_service'
+  get 'contact', to: 'static_pages#contact'
+  get 'shipping', to: 'static_pages#shipping'
+  get 'code_of_conduct', to: 'static_pages#code_of_conduct'
+  
+
 
   devise_scope :spree_user do
     get '/login', to: 'user_sessions#new', as: :login

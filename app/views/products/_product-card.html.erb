@@ -15,8 +15,9 @@
 %>
 
 <% cache cached do %>
+  
   <div class="<%= class_names %> product--card" id="product--card" itemscope itemtype="http://schema.org/Product" id=<%= product_id %>>
-      
+  <a href="<%= product_path(product) %>">    
       
       
       <div class="product-card--image-container">
@@ -36,5 +37,7 @@
         <% end %>
         <span itemprop="priceCurrency" content="<%= current_pricing_options.currency %>"></span>
       </div>
+      </a>
   </div>
+  
 <% end %>

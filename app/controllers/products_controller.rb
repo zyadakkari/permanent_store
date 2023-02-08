@@ -34,7 +34,7 @@ class ProductsController < StoreController
       flash[:error] = t('spree.cannot_edit_orders')
       redirect_to edit_cart_path
     else
-      render 'carts/edit'
+      render 'product'
     end
 
   end

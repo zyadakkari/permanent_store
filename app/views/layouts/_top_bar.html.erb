@@ -10,14 +10,13 @@
     </div>
   </div>
   <div class="top-logo">
-    <%= link_to image_tag('spree/frontend/logo/LOGO COMPRESSED.jpg', class: "image_size"), root_path, class: 'logo--link' %>
+    <%= link_to image_tag('spree/frontend/logo/no-bg-logo.png', class: "image_size"), root_path, class: 'logo--link' %>
   </div>
   <button class="cart-toggle"  onclick="bag_toggle()">
     <span class="bag">Bag</span>
     <span class="cart-toggle--dot">
-      <span>
-        <% if current_order_bag.nil? %>
-          0
+      <span class="bag-quantity">
+        <% if current_order_bag.nil? || current_order_bag.line_items.count == 0%>
         <% else %>
           <%= current_order_bag.line_items.count %>
         <% end %>

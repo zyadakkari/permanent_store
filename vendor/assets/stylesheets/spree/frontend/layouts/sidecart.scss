@@ -144,6 +144,23 @@ button.cart-close {
     width: auto;
 }
 
+@media (max-width: 750px) {
+    .edit-cart-img {
+        height: 30vh;
+        width: auto;
+        max-width: 40vw;
+    }
+
+    .cart-page {
+        padding: 10px;
+    }
+
+    .to-checkout-btn {
+        width: 100%!important;
+    }
+}
+
+
 .cart-img {
     object-fit: contain;
     width: auto;
@@ -181,3 +198,9 @@ input.cart--item-remove {
     margin-right: 10px;
   }
   
+  div input[type="number"] {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }

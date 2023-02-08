@@ -28,6 +28,8 @@
     </footer>
   </div>
   <div class="checkout--aside" role="contentinfo">
+    <button class="order-summary-toggle">
+    </button>
     <% if @order.state != "confirm" %>
       <div class="checkout__summary">
         <%= render "checkout_summary", order: @order %>

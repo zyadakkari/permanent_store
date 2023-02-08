@@ -14,3 +14,8 @@ window.addEventListener('load', function () {
     }, 1000);
   });
   
+
+  function removeButtonAlert() {
+    alert("Please edit the quantity to zero to remove the item");
+  }
+  

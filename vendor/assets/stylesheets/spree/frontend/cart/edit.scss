@@ -1,3 +1,19 @@
 .cart-page {
     padding-top: 10%;
+    margin-top: 10%;
+    height: 100vh;
+}
+
+@media (max-width: 480px) {
+    .cart-footer__primary-action {
+        position: fixed;
+        bottom: 20px;
+        width: 100%;
+      }
+
+      .cart-page__other-actions {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
 }

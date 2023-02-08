@@ -145,8 +145,8 @@ span .cart-toggle--dot, .bag {
     .cart-toggle--dot {
 
             display: flex;
-            height: 10px;
-            width: 10px;
+            height: 12px;
+            width: 12px;
             transform-origin: center;
             align-items: center;
             justify-content: center;
@@ -156,10 +156,14 @@ span .cart-toggle--dot, .bag {
             --tw-bg-opacity: 1;
             background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
             line-height: 1;
+            margin-top: 4px;
 
     }
 
     .bag-quantity {
-        display: none;
+        color: white;
+        font-size: 10px;
     }
+
+    
 }

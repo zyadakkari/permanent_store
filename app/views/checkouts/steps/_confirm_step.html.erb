@@ -1,13 +1,13 @@
 <div class="confirm-step">
-  
-  
-  <%= render "checkout_summary", order: @order %>
-  
   <%= button_tag(
     I18n.t('spree.place_order'),
     class: 'btn delivery-btn',
     name: :commit,
   ) %>
+  
+  <%= render "checkout_summary", order: @order %>
+  
+  
 </div>
 
 <script>

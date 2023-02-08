@@ -33,6 +33,8 @@ class CartLineItemsController < StoreController
           redirect_back_or_default(root_path)
           return
         else
+          puts @order.line_items
+          puts current_order_bag
           redirect_to request.referer
         end
       end

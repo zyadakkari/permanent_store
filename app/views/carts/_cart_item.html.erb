@@ -27,12 +27,15 @@
         <div>Quantity: </div>
         <div><%= item_form.text_field :quantity, type: 'number', min: 0 %></div>
       </div>
-      <%= order_form.submit(
+      <%#= order_form.submit(
         'Remove',
         class: 'cart--item-remove',
         id: "delete_#{dom_id(line_item)}",
         data: { disable_with: 'Remove' }
       ) %>
+      <span class="cart--item-remove" id="delete_<%= dom_id(line_item) %>" onclick="removeButtonAlert()">
+        Remove
+      </span>
     </div>
 
    

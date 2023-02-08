@@ -28,14 +28,61 @@
     scroll-snap-align: start;
     text-align: center;
     position: relative;
+    height: 100vh;
     min-height: 100vh;
     width: 100%;
+    min-width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
   }
 
-  .bg-1 {
+  // images need to be 1:1 ratio
+  @media (min-width: 740px) {
+    .bg-1 {
+    background: url(spree/frontend/homepage_campaigns/s1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-size: cover;
+    
+  }
+
+  .bg-2 {
+    background: url(spree/frontend/homepage_campaigns/s4.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+
+  .bg-3 {
+    background: url(spree/frontend/homepage_campaigns/s3.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .text-container2 {
+    margin-left: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    --tw-text-opacity: 1;
+    color: rgba(255,255,255,var(--tw-text-opacity));
+  }
+}
+
+
+// images need to be 2:3 ratio
+@media (max-width: 740px) {
+    .bg-1 {
     background: url(spree/frontend/homepage_campaigns/s1.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -69,3 +116,4 @@
     --tw-text-opacity: 1;
     color: rgba(255,255,255,var(--tw-text-opacity));
   }
+}

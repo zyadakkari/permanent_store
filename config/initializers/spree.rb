@@ -9,6 +9,10 @@ Spree.config do |config|
   # Default currency for new sites
   config.currency = "USD"
 
+  # Spree.config do |config|
+  #   config.supported_currencies = %w[USD EUR GBP EGP]
+  # end
+
   # from address for transactional emails
   config.mails_from = "store@example.com"
 

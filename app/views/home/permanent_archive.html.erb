@@ -1,0 +1,24 @@
+<% @archived_products %>
+
+<div class="products">
+  <h1 class="products-title">
+    Permanent Archive
+  </h1>
+  <div class="products--layout">
+    <span class="products--layout--title">View</span>
+    <span onclick="viewToggle(0)">2</span>
+    <span onclick="viewToggle(1)">3</span>
+    <span onclick="viewToggle(2)">4</span>
+  </div>
+  <div class="products--container">
+    
+    <% if @archived_products.empty? %>
+        <h6>
+          <%= t('spree.no_products_found') %>
+        </h6>
+    <% else %>
+        <%= render 'products/products', products: @archived_products, taxon: @taxon %>
+    <% end %>
+    
+  </div>
+</div>

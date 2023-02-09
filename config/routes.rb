@@ -11,13 +11,17 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get 'home/about'
   get 'home/customer_service'
-  get 'home/privacy_policy'
+  get 'home/contact_us'
   get 'home/faq'
   get 'home/terms_of_service'
   get 'home/contact'
   get 'home/shipping'
   get 'home/code_of_conduct'
   get 'home/permanent_archive'
+
+  Spree::Core::Engine.routes.draw do
+    put '/currency', to: 'home#currency', as: :currency
+  end
 
   devise_for(:user, {
     class_name: 'Spree::User',

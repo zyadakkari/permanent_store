@@ -6,6 +6,7 @@
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     justify-content: center;
+    background-color: inherit;
 }
 
 @media (min-width: 940px) {
@@ -103,12 +104,14 @@ span .cart-toggle--dot, .bag {
 @media (min-width: 480px) {
     .bag {
         display: block;
+        color: black;
     }
 }
  
 @media (max-width: 480px) {
     .bag {
         display: none;
+        color: black;
     }
 }
 

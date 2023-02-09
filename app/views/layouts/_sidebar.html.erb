@@ -5,6 +5,7 @@
       <%= render 'shared/search/search_bar', taxons: taxons, taxon: taxon %>
     </div>
   </div>
+  
   <ul class="sidebar--desktop" style="opacity: 1;">
     <li class="nav-item-sidebar sidebar-shop">
       <span class="sidebar--title sidebar--title-expand" onclick="toggleDesktop(0)">Shop</span>
@@ -79,13 +80,13 @@
             <%= link_to 'Frequently Asked Questions', home_faq_path %>
           </li>
           <li class="sidebar-customer-service-all-item">
-            <%= link_to 'Shipping', home_shipping_path %>
+            <%= link_to 'Shipping Information', home_shipping_path %>
           </li>
           <li class="sidebar-customer-service-all-item">
             <%= link_to 'Terms & Conditions', home_terms_of_service_path %>
           </li>
           <li class="sidebar-customer-service-all-item">
-            <%= link_to 'Privacy Policy', home_privacy_policy_path %>
+            <%= link_to 'Contact Us', home_contact_us_path %>
           </li>
         </ul>
       </div>
@@ -174,13 +175,13 @@
           <%= link_to 'Frequently Asked Questions', home_faq_path %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <%= link_to 'Shipping', home_shipping_path %>
+          <%= link_to 'Shipping Information', home_shipping_path %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
           <%= link_to 'Terms & Conditions', home_terms_of_service_path %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <%= link_to 'Privacy Policy', home_privacy_policy_path %>
+          <%= link_to 'Contact Use', home_contact_us_path %>
         </li>
       </ul>
     </div>

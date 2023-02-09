@@ -20,46 +20,23 @@
       <div class="header" style="opacity: 1;">
         <%= render 'layouts/top_bar' %>
       </div>
-    <div class="storefront-container">
+      <div class="storefront-container">
       
-      <div class="sidebar-container">
-        <%= render 'layouts/sidebar', taxons: @taxons, taxon: @taxon %>
-      </div>
-      <div class="storefront-content">
-        <%= yield %>
-      </div>
-      <div class="bag-container">
-        <%= render 'layouts/side_cart'%>
-        <div class="backdrop"></div>
-      </div>
-      <script 
-        <div class="category-navigation">
-          <div class="categories">
-            <nav class="categories
-          </div>
+        <div class="sidebar-container">
+          <%= render 'layouts/sidebar', taxons: @taxons, taxon: @taxon %>
         </div>
-        <%#= flash_messages %>
-        <%#= render BreadcrumbsComponent.new(@taxon) %>
-        <main>
-          <%#= yield %>
-          
-        </main>
-        <%#= yield :templates %>
+        <div class="storefront-content">
+          <%= yield %>
+          <%= render 'layouts/footer' %>
+        </div>
+        <div class="bag-container">
+          <%= render 'layouts/side_cart'%>
+          <div class="backdrop"></div>
+        </div>
+        <%= flash_messages %>
+        <%= render BreadcrumbsComponent.new(@taxon) %>
       </div>
-      
-
-
     </div>
-  </div>
-  </body>
-  <%= render 'layouts/footer' %>
-
-
-
-
-  <body class="<%#= body_class %>" id="<%#= @body_id || 'default' %>">
-    
-    
   </body>
   
 </html>

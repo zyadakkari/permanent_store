@@ -99,3 +99,6 @@ gem "bootstrap", "~> 5.2"
 gem "tailwindcss-rails", "~> 2.0"
 
 gem 'jquery-rails', '~> 4.4.0'
+
+gem 'aws-sdk-rails', '~> 3'
+gem 'aws-sdk-s3', '~> 1'

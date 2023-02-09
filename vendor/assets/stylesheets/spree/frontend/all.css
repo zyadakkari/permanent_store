@@ -6,7 +6,6 @@
  *= require_self
  *= require_tree .
 */
-@import 'bootstrap';
 
 :root {
     --px-md: 10px;

@@ -533,6 +533,7 @@ DEPENDENCIES
   rubocop-performance (~> 1.5)
   rubocop-rails (~> 2.3)
   rubocop-rspec (~> 2.0)
+  ruby-vips
   selenium-webdriver
   solidus_api (~> 3.2)
   solidus_auth_devise

@@ -104,4 +104,4 @@ gem 'aws-sdk-rails', '~> 3'
 gem 'aws-sdk-s3', '~> 1'
 gem 'rails_12factor'
 gem 'ruby-vips'
-gem 'vips', '~> 8.6', '>= 8.6.3.1'
+gem 'vips', "8.8.4"

@@ -526,6 +526,7 @@ DEPENDENCIES
   factory_bot (>= 4.8)
   factory_bot_rails
   ffaker (~> 2.13)
+  image_processing (~> 1.2)
   jbuilder
   jquery-rails (~> 4.4.0)
   pg (~> 1.1)
@@ -539,6 +540,7 @@ DEPENDENCIES
   rubocop-performance (~> 1.5)
   rubocop-rails (~> 2.3)
   rubocop-rspec (~> 2.0)
+  ruby-vips
   selenium-webdriver
   solidus_api (~> 3.2)
   solidus_auth_devise

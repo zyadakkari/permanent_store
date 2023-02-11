@@ -489,6 +489,8 @@ GEM
       activesupport (>= 5.2.0, < 8.0)
       concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
+    vips (8.12.2)
+      ffi (~> 1.12)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -553,6 +555,7 @@ DEPENDENCIES
   truncate_html
   tzinfo-data
   view_component (~> 2.46)
+  vips (~> 8.6, >= 8.6.3.1)
   web-console
   webdrivers
 

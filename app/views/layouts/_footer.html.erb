@@ -2,7 +2,7 @@
   
   <div class="main-footer-links">
     <a href="http://www.instagram.com/permanencee?igshid=YWJhMjlhZTc=" target="_blank" rel="noopener noreferrer">Instagram</a>
-    <span>Permanence © 2021</span>
+    <span>Permanence © <%= Date.today.year %></span>
   </div>
   <%
     available_locales = current_store.available_locales.map do |locale|

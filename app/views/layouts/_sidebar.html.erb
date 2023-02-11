@@ -97,21 +97,6 @@
       <div class="sidebar--mobile-search">
         <%= render 'shared/search/search_bar', taxons: taxons, taxon: taxon %>
       </div>
-      <div class="sidebar--mobile-additional">
-        <div class="sidebar--mobile-favorites">
-          <ul class="sidebar--mobile-favorites-list">
-            <li class="sidebar--mobile-favorites-item">Favourites</li>
-          </ul>
-        </div>
-        <div class="sidebar--mobile-currency">
-          <ul class="sidebar--mobile-currency-list">
-            <li class="sidebar--mobile-currency-item is-active">GBP</li>
-            <li class="sidebar--mobile-currency-item">USD</li>
-            <li class="sidebar--mobile-currency-item">EUR</li>
-            <li class="sidebar--mobile-currency-item">EGP</li>
-          </ul>
-        </div>
-      </div>
     </div>
     <ul class="sliding-navbar">
       <li class="sidebar--mobile-title" onclick="toggleMenu(0);">Shop</li>
@@ -134,31 +119,31 @@
           <%= link_to 'All Products', products_path %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <%= link_to 'Coats', products_path %>
+          <%= link_to 'Coats', products_path(taxon: 7) %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <%= link_to 'Jackets', products_path %>
+          <%= link_to 'Jackets', products_path(taxon: 8) %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <%= link_to 'Dresses', products_path %>
+          <%= link_to 'Dresses', products_path(taxon: 12) %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
           <%= link_to 'Tops', products_path %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <%= link_to 'Pants', products_path %>
+          <%= link_to 'Pants', products_path(taxon: 13) %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <%= link_to 'Skirts', products_path %>
+          <%= link_to 'Skirts', products_path(taxon: 14) %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <%= link_to 'Watches', products_path %>
+          <%= link_to 'Watches', products_path(taxon: 15) %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <%= link_to 'Bags', products_path %>
+          <%= link_to 'Bags', products_path(taxon: 5) %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <%= link_to 'Shoes', products_path %>
+          <%= link_to 'Shoes', products_path(taxon: 17) %>
         </li>
       </ul>
       <ul class="sidebar--mobile-submenu"></ul>

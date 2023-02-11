@@ -1,0 +1,71 @@
+.faq--container {
+    min-height: 100vh;
+}
+
+@media (min-width: 940px) {
+    .page-cover--section {
+        margin-bottom: 100px;
+    }
+}
+
+.page-cover--section {
+    position: relative;
+    margin-top: 135px;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .page-cover--section h1 {
+        text-align: center;
+    }
+
+    .accordions--section {
+        margin-left: auto;
+        margin-right: auto;
+        width: 780px;
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+}
+
+.page-cover--section h1 {
+    margin-left: 0;
+    padding-left: 10px;
+    font-weight: 400;
+}
+
+.faq-title {
+    z-index: 10;
+}
+
+.page-cover--section+section {
+    margin-top: 0;
+}
+
+.accordions--section:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.accordions--section {
+    margin-top: 40px!important;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: grid;
+    width: 83%;
+    max-width: 100%;
+}
+
+.accordions--section .accordion {
+    padding-left: 17px;
+}
+
+.accordion--icon > *, .mobile--accordion--icon > * {
+    position: absolute;
+    top: 0;
+    right: 100%;
+    margin-top: 5px;
+    margin-right: 10px;
+    width: 7px;
+    transform: rotate(90deg);
+    transition: all .3s cubic-bezier(.22,1,.36,1);
+
+}

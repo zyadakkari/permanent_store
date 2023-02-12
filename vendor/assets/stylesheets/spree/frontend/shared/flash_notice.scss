@@ -1,0 +1,35 @@
+.flash {
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.flash.notice {
+    background-color: #dff0d8;
+    border: 1px solid #3c763d;
+    color: #3c763d;
+}
+
+.flash.alert {
+    background-color: #f2dede;
+    border: 1px solid #a94442;
+    color: #a94442;
+}
+
+.flash.error {
+    background-color: #f2dede;
+    border: 1px solid #a94442;
+    color: #a94442;
+}
+
+.flash.flash--error {
+    background-color: #ff5e5e;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}

@@ -8,7 +8,7 @@
       available_countries,
       :id,
       :name,
-      {},
+      {selected: 65},
       autocomplete: "#{address_type} country-name",
       class: 'js-trigger-state-change',
       required: true,
@@ -60,7 +60,7 @@
   <% if Spree::Config[:address_requires_state] %>
     <% have_states = !address.country.states.empty? %>
 
-    <span class="js-address-fields" style="display: none;">
+    <span class="js-address-fields">
       <div class="select-input">
         <div class="field-input-wrapper">
           <%= form.label :state_id, "#{I18n.t("spree.state")}:" %>

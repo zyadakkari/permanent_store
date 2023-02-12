@@ -16,6 +16,8 @@ Spree.config do |config|
   # from address for transactional emails
   config.mails_from = "store@example.com"
 
+  config.address_requires_state = false
+
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
 

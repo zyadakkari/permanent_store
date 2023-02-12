@@ -30,6 +30,7 @@ class CartLineItemsController < StoreController
       format.html do
         if @order.errors.any?
           puts "hello"
+          puts Spree::Config[:currency]
           puts @order.errors.full_messages.join(", ")
           flash[:error] = @order.errors.full_messages.join(", ")
           redirect_to request.referer

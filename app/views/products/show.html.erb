@@ -1,7 +1,13 @@
 <% @body_id = 'product-details' %>
-
+<% if flash[:error].present? %>
+      <div class="flash flash--error">
+        <%= flash[:error] %>
+      </div>
+    <% end %> 
 <% cache [I18n.locale, current_pricing_options, @product] do %>
-  <div class="product-page" itemscope itemtype="http://schema.org/Product">   
+  
+  <div class="product-page" itemscope itemtype="http://schema.org/Product">
+      
     <div class="product--gallery">
       <div class="product-page--images">
         <%= render 'product_images_carousel', product: @product %>

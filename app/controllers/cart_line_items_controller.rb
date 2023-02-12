@@ -29,12 +29,12 @@ class CartLineItemsController < StoreController
     respond_with(@order) do |format|
       format.html do
         if @order.errors.any?
+          puts "hello"
+          puts @order.errors.full_messages.join(", ")
           flash[:error] = @order.errors.full_messages.join(", ")
-          redirect_back_or_default(root_path)
+          redirect_to request.referer
           return
         else
-          puts @order.line_items
-          puts current_order_bag
           redirect_to request.referer
         end
       end

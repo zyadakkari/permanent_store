@@ -24,33 +24,33 @@
               <%= link_to 'All Products', products_path %>
             </li>
             <li class="sidebar-shop-all-item">
-              <%= link_to 'Coats', products_path %>
+              <%= link_to 'Coats', products_path(taxon: 16) %>
             </li>
             <li class="sidebar-shop-all-item">
-              <%= link_to 'Jackets', products_path %>
+              <%= link_to 'Jackets', products_path(taxon: 17) %>
             </li>
             <li class="sidebar-shop-all-item">
-              <%= link_to 'Dresses', products_path %>
+              <%= link_to 'Dresses', products_path(taxon: 15) %>
             </li>
             <li class="sidebar-shop-all-item">
-              <%= link_to 'Tops', products_path %>
+              <%= link_to 'Tops', products_path(taxon: 9) %>
             </li>
             <li class="sidebar-shop-all-item">
-              <%= link_to 'Pants', products_path %>
+              <%= link_to 'Pants', products_path(taxon: 13) %>
             </li>
           </ul>
           <ul>
             <li class="sidebar-shop-all-item">
-              <%= link_to 'Skirts', products_path %>
+              <%= link_to 'Skirts', products_path(taxon: 12) %>
             </li>
             <li class="sidebar-shop-all-item">
-              <%= link_to 'Watches', products_path %>
+              <%= link_to 'Watches', products_path(taxon: 15) %>
             </li>
             <li class="sidebar-shop-all-item">
-              <%= link_to 'Bags', products_path %>
+              <%= link_to 'Bags', products_path(taxon: 5) %>
             </li>
             <li class="sidebar-shop-all-item">
-              <%= link_to 'Shoes', products_path %>
+              <%= link_to 'Shoes', products_path(taxon: 14) %>
             </li>
           </ul>
         </div>
@@ -119,22 +119,22 @@
           <%= link_to 'All Products', products_path %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <%= link_to 'Coats', products_path(taxon: 7) %>
+          <%= link_to 'Coats', products_path(taxon: 16) %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <%= link_to 'Jackets', products_path(taxon: 8) %>
+          <%= link_to 'Jackets', products_path(taxon: 17) %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <%= link_to 'Dresses', products_path(taxon: 12) %>
+          <%= link_to 'Dresses', products_path(taxon: 15) %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <%= link_to 'Tops', products_path %>
+          <%= link_to 'Tops', products_path(taxon: 9) %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
           <%= link_to 'Pants', products_path(taxon: 13) %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <%= link_to 'Skirts', products_path(taxon: 14) %>
+          <%= link_to 'Skirts', products_path(taxon: 12) %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
           <%= link_to 'Watches', products_path(taxon: 15) %>
@@ -143,7 +143,7 @@
           <%= link_to 'Bags', products_path(taxon: 5) %>
         </li>
         <li class="sidebar-shop-all-item-mobile">
-          <%= link_to 'Shoes', products_path(taxon: 17) %>
+          <%= link_to 'Shoes', products_path(taxon: 14) %>
         </li>
       </ul>
       <ul class="sidebar--mobile-submenu"></ul>

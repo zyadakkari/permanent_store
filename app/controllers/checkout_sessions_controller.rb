@@ -3,6 +3,8 @@
 class CheckoutSessionsController < CheckoutBaseController
   layout false
 
+  helper 'orders', 'spree/checkout'
+
   def new
     @user = Spree::User.new
   end

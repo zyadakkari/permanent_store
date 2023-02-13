@@ -22,12 +22,6 @@ class CartsController < StoreController
 
   def update
     authorize! :update, @order, cookies.signed[:guest_token]
-    # if params[:commit] == "Remove"
-    #   puts "the order is #{@order.line_items}"
-    #   # puts @order.line_items.find(params[:order][:line_items_attributes].first[1][:id])
-    #   line_item = @order.line_items.find(params[:order][:line_items_attributes].first[1][:id])
-    #   @order.line_items.destroy(line_item)
-    # end
     if @order.contents.update_cart(order_params)
       @order.next if params.key?(:checkout) && @order.cart?
 

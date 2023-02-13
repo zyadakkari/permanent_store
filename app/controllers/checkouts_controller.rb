@@ -8,7 +8,7 @@ class CheckoutsController < CheckoutBaseController
   layout false
 
   before_action :ensure_valid_state
-  before_action :check_registration
+  # before_action :check_registration
   before_action :setup_for_current_state
 
   # Updates the order and advances to the next state (when possible.)
@@ -168,7 +168,9 @@ class CheckoutsController < CheckoutBaseController
   end
 
   # Introduces a registration step whenever the +registration_step+ preference is true.
+  # setting registration_step to false as only guest checkout allowed & email is confirmed on address step
   def check_registration
+    puts registration_required?
     return unless registration_required?
 
     store_location

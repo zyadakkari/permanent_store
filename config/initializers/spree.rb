@@ -81,6 +81,9 @@ Spree::Api::Config.configure do |config|
   config.requires_authentication = true
 end
 
+Spree::Auth::Config[:registration_step] = false
+
+
 Spree.user_class = "Spree::LegacyUser"
 
 # Rules for avoiding to store the current path into session for redirects

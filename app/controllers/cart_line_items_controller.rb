@@ -42,6 +42,10 @@ class CartLineItemsController < StoreController
     end
   end
 
+  
+
+
+
   private
 
   def store_guest_token

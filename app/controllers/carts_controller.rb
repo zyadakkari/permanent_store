@@ -39,6 +39,13 @@ class CartsController < StoreController
     end
   end
 
+  def remove
+    @order = current_order
+    variant  = Spree::Variant.find(params[:variant_id])
+    @order.contents.remove(variant, 1)
+    redirect_to edit_cart_path
+  end
+
   def empty
     if @order = current_order
       authorize! :update, @order, cookies.signed[:guest_token]

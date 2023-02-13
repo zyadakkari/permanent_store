@@ -33,9 +33,12 @@
         id: "delete_#{dom_id(line_item)}",
         data: { disable_with: 'Remove' }
       ) %>
-      <span class="cart--item-remove" id="delete_<%= dom_id(line_item) %>" onclick="removeButtonAlert()">
-        Remove
+      <span class="cart--item-remove" id="delete_<%= dom_id(line_item) %>" >
+        <%= link_to 'remove', remove_item_path(variant), method: :delete, class: 'delete' %>
       </span>
+
+      
+
     </div>
 
    

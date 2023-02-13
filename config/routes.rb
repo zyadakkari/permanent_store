@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   get 'home/code_of_conduct'
   get 'home/permanent_archive'
 
+  delete 'remove_item/:variant_id', to: 'carts#remove', as: 'remove_item'
+
+
   Spree::Core::Engine.routes.draw do
     put '/currency', to: 'home#currency', as: :currency
   end

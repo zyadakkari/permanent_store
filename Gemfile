@@ -105,3 +105,5 @@ gem 'aws-sdk-s3', '~> 1'
 gem 'rails_12factor'
 
 gem "draper", "~> 4.0"
+
+gem 'dotenv-rails', groups: [:development, :test]

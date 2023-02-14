@@ -184,6 +184,10 @@ GEM
     diff-lcs (1.5.0)
     discard (1.2.1)
       activerecord (>= 4.2, < 8)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     draper (4.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -537,6 +541,7 @@ DEPENDENCIES
   capybara-screenshot (~> 1.0)
   database_cleaner (~> 1.7)
   debug
+  dotenv-rails
   draper (~> 4.0)
   factory_bot (>= 4.8)
   factory_bot_rails

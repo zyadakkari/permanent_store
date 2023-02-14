@@ -5,13 +5,25 @@ require "rails/all"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-require 'dotenv/load'
+
 
 module PermanentStore
   class Application < Rails::Application
+
+    require 'dotenv/load'
     if defined?(FactoryBotRails)
       initializer after: "factory_bot.set_factory_paths" do
         require 'spree/testing_support'
+
+
+        config.before_configuration do
+          env_file = File.join(Rails.root, 'config', 'local_env.yml')
+          YAML.load(File.open(env_file)).each do |key, value|
+            ENV[key.to_s] = value
+          end if File.exists?(env_file)
+        end
+
+        
         FactoryBot.definition_file_paths = [
           *Spree::TestingSupport::FactoryBot.definition_file_paths,
           Rails.root.join('spec/fixtures/factories'),

@@ -1,3 +1,4 @@
+<%= javascript_include_tag 'spree/frontend/checkout/address' %>
 <% order = form.object %>
 
 
@@ -10,10 +11,10 @@
       </div>
 
     <%= form.fields_for :ship_address do |ship_form| %>
-      <%#= label_tag 'order_use_billing', class: 'checkbox-input' do %>
-        <%#= check_box_tag('order[use_billing]', 1, order.shipping_eq_billing_address?, onclick: "useBilling") %>
-        <%#= t('Use as billing address') %>
-      <%# end %>
+      <%= label_tag 'order_use_billing', class: 'checkbox-input' do %>
+        <%= check_box_tag('order[use_billing]', 1, order.shipping_eq_billing_address?, id: "order_use_billing") %>
+        <%= t('Use as billing address') %>
+      <% end %>
       
 
       <%= render(
@@ -23,21 +24,23 @@
         address: order.ship_address
        ) %>
     <% end %>
+  
+   <div id="billing_address_inputs">
+      <%= form.fields_for :bill_address do |bill_form| %>
 
-    <%= form.fields_for :bill_address do |bill_form| %>
-
-      <div class="section__header">
-        <h2 class="proposed-shipment__secondary-title"><%= t('spree.billing_address') %></h2>
-      </div>
-      <div class="billing-address-inputs" >
-        <%= render(
-          "checkouts/steps/address_step/address_inputs",
-          form: bill_form,
-          address_type: "billing",
-          address: order.bill_address
-        ) %>
-      </div>
-    <% end %>
+        <div class="section__header">
+          <h2 class="proposed-shipment__secondary-title"><%= t('spree.billing_address') %></h2>
+        </div>
+        <div class="billing-address-inputs" >
+          <%= render(
+            "checkouts/steps/address_step/address_inputs",
+            form: bill_form,
+            address_type: "billing",
+            address: order.bill_address
+          ) %>
+        </div>
+      <% end %>
+    </div>
   </div>
   
   <% if spree_current_user %>
@@ -63,3 +66,4 @@
     <%= link_to "Return to bag", edit_cart_path, class: "step__footer__previous" %>
   </div>
 
+  

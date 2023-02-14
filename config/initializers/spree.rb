@@ -18,7 +18,6 @@ Spree.config do |config|
   # from address for transactional emails
   config.mails_from = "infopermanence@gmail.com"
 
-  config.order_mailer_class = "OrderConfirmationMailer"
 
   config.address_requires_state = false
 

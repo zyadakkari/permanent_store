@@ -60,7 +60,7 @@ class CheckoutsController < CheckoutBaseController
     @current_order = nil
     set_successful_flash_notice
     redirect_to completion_route
-    OrderConfirmationMailer.confirm_email(@order).deliver_later
+    Spree::OrderMailer.confirm_email(@order).deliver_later
   end
 
   def set_successful_flash_notice

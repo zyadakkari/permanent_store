@@ -40,10 +40,10 @@
   // images need to be 1:1 ratio
   @media (min-width: 740px) {
     .bg-1 {
-    background: url(spree/frontend/homepage_campaigns/desktop1.jpg);
+    background: url(spree/frontend/homepage_campaigns/s-m-1.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     // -webkit-background-size: cover;
     // -moz-background-size: cover;
     // -o-background-size: cover;

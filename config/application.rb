@@ -6,14 +6,11 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-if ['development', 'test'].include? ENV['RAILS_ENV']
-  Dotenv::Railtie.load
-end
+
 
 module PermanentStore
   class Application < Rails::Application
 
-    require 'dotenv/load'
     if defined?(FactoryBotRails)
       initializer after: "factory_bot.set_factory_paths" do
         require 'spree/testing_support'

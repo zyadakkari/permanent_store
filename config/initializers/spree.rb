@@ -127,3 +127,17 @@ Spree.user_class = "Spree::LegacyUser"
 #     Spree::Image.attachment_definitions[:attachment][key.to_sym] = value
 #   end
 # end
+
+# Replace 'EGP' with the ISO currency code you want to use
+Money::Currency.register({
+  :priority            => 1,
+  :iso_code            => "EGP",
+  :iso_numeric         => "818",
+  :name                => "Egyptian Pound",
+  :symbol              => "EGP", # Replace with the currency symbol you want to use
+  :subunit             => "Piastre",
+  :subunit_to_unit     => 100,
+  :symbol_first        => true,
+  :decimal_mark        => ".",
+  :thousands_separator => ","
+})

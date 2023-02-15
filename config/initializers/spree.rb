@@ -10,6 +10,7 @@ Spree.config do |config|
   # Core:
   # Default currency for new sites
   config.currency = "EGP"
+  config.currency_symbol = "ج.م"
 
   # Spree.config do |config|
   #   config.supported_currencies = %w[USD EUR GBP EGP]

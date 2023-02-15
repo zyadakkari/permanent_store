@@ -9,7 +9,7 @@ Spree.load_defaults '3.2.5'
 Spree.config do |config|
   # Core:
   # Default currency for new sites
-  config.currency = "USD"
+  config.currency = "EGP"
 
   # Spree.config do |config|
   #   config.supported_currencies = %w[USD EUR GBP EGP]

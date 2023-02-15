@@ -34,9 +34,12 @@
           <span class="price selling" itemprop="price" content="<%= price.to_d %>">
             <%= price.to_html %>
           </span>
+          <span itemprop="priceCurrency" content="<%= current_pricing_options.currency %>">
+          <%= Money::Currency.find(current_pricing_options.currency).symbol %>
+          </span>
         <% end %>
-        <span itemprop="priceCurrency" content="<%= current_pricing_options.currency %>"></span>
       </div>
+
       </a>
   </div>
   

@@ -12,8 +12,6 @@ module PermanentStore
   class Application < Rails::Application
 
     config.active_job.queue_adapter = :sidekiq
-    config.action_controller.asset_host = 'https://d1bhl3r9x85s60.cloudfront.net'
-    config.action_controller.asset_path = 'https://d1bhl3r9x85s60.cloudfront.net'
 
     if defined?(FactoryBotRails)
       initializer after: "factory_bot.set_factory_paths" do

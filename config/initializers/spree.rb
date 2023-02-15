@@ -134,7 +134,7 @@ Money::Currency.register({
   :iso_code            => "EGP",
   :iso_numeric         => "818",
   :name                => "Egyptian Pound",
-  :symbol              => "EGP", # Replace with the currency symbol you want to use
+  :symbol              => "ج.م", 
   :subunit             => "Piastre",
   :subunit_to_unit     => 100,
   :symbol_first        => true,

@@ -1,4 +1,4 @@
-Permanence Store
+**Permanence Store**
 A vintage e-commerce site built using Ruby on Rails Solidus framework.
 
 View a live version on Heroku.

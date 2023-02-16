@@ -13,7 +13,7 @@ Spree.config do |config|
   
 
   # Spree.config do |config|
-  #   config.supported_currencies = %w[USD EUR GBP EGP]
+  #   config.supported_currencies = %w[EUR EGP]
   # end
 
   # from address for transactional emails
@@ -21,6 +21,7 @@ Spree.config do |config|
 
 
   config.address_requires_state = false
+
 
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
@@ -61,6 +62,8 @@ Spree.config do |config|
   #   test_mode: !Rails.env.production?
   # )
 end
+
+
 
 Spree::Backend::Config.configure do |config|
   config.locale = 'en'

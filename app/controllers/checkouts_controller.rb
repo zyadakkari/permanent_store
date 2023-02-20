@@ -45,6 +45,7 @@ class CheckoutsController < CheckoutBaseController
 
   def redirect_on_failure
     flash[:error] = @order.errors.full_messages.join("\n")
+    puts @order.errors.full_messages.join("\n")
     redirect_to(checkout_state_path(@order.state))
   end
 

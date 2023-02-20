@@ -35,40 +35,60 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    overflow: hidden;
   }
 
   // images need to be 1:1 ratio
   @media (min-width: 740px) {
-    .bg-1 {
-    background: url(spree/frontend/homepage_campaigns/landscape-1.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    .img-home {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+    }
+    // background: url(spree/frontend/desktop-home1.jpg);
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
     // -webkit-background-size: cover;
     // -moz-background-size: cover;
     // -o-background-size: cover;
     // background-size: cover;
     
-  }
 
-  .bg-2 {
-    background: url(spree/frontend/homepage_campaigns/s-m-2.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
+
+  // .bg-2 {
+  //   background: url(spree/frontend/desktop-home2.jpg) no-repeat center center fixed;
+  //   -webkit-background-size: cover;
+  //   -moz-background-size: cover;
+  //   -o-background-size: cover;
+  //   background-size: cover;
+  // }
   
 
-  .bg-3 {
-    background: url(spree/frontend/homepage_campaigns/s-m-3.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
+  // .bg-3 {
+  //   background: url(spree/frontend/desktop-home3.jpg) no-repeat center center fixed;
+  //   -webkit-background-size: cover;
+  //   -moz-background-size: cover;
+  //   -o-background-size: cover;
+  //   background-size: cover;
+  // }
+
+  // .bg-4 {
+  //   background: url(spree/frontend/desktop-home4.jpg) no-repeat center center fixed;
+  //   -webkit-background-size: cover;
+  //   -moz-background-size: cover;
+  //   -o-background-size: cover;
+  //   background-size: cover;
+  // }
 
   .text-container2 {
+    position: absolute;
+    top: 50%;
+    left: 0;
     margin-left: 20px;
     font-size: 12px;
     text-transform: uppercase;
@@ -76,14 +96,20 @@
     font-weight: 400;
     --tw-text-opacity: 1;
     color: rgba(255,255,255,var(--tw-text-opacity));
+    text-shadow: 1px 1px 2px black;
   }
 }
 
 
 // images need to be 2:3 ratio
 @media (max-width: 740px) {
+
+  .img-home {
+    display: none;
+  }
+
     .bg-1 {
-    background: url(spree/frontend/homepage_campaigns/s-m-1.jpg) no-repeat center center fixed;
+    background: url(spree/frontend/phone-home1.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -91,7 +117,7 @@
   }
 
   .bg-2 {
-    background: url(spree/frontend/homepage_campaigns/s-m-2.jpg) no-repeat center center fixed;
+    background: url(spree/frontend/phone-home2.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -100,7 +126,15 @@
   
 
   .bg-3 {
-    background: url(spree/frontend/homepage_campaigns/s-m-3.jpg) no-repeat center center fixed;
+    background: url(spree/frontend/phone-home3.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .bg-4 {
+    background: url(spree/frontend/phone-home4.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

@@ -156,6 +156,9 @@
   // }
 
   .text-container2 {
+    position: absolute;
+    top: 50%;
+    left: 0;
     margin-left: 20px;
     font-size: 12px;
     text-transform: uppercase;
@@ -163,5 +166,6 @@
     font-weight: 400;
     --tw-text-opacity: 1;
     color: rgba(255,255,255,var(--tw-text-opacity));
+    text-shadow: 1px 1px 2px black;
   }
 }

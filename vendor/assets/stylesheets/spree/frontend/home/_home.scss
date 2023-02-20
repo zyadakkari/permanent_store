@@ -49,6 +49,10 @@
       min-height: 100%;
       object-fit: cover;
     }
+
+    .img-home-mobile {
+      display: none;
+    }
     // background: url(spree/frontend/desktop-home1.jpg);
     // background-position: center;
     // background-repeat: no-repeat;
@@ -108,38 +112,48 @@
     display: none;
   }
 
-    .bg-1 {
-    background: url(spree/frontend/phone-home1.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  .img-home-mobile {
+    position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
   }
 
-  .bg-2 {
-    background: url(spree/frontend/phone-home2.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
+  //   .bg-1 {
+  //   background: url(spree/frontend/phone-home1.jpg) no-repeat center center fixed;
+  //   -webkit-background-size: cover;
+  //   -moz-background-size: cover;
+  //   -o-background-size: cover;
+  //   background-size: cover;
+  // }
+
+  // .bg-2 {
+  //   background: url(spree/frontend/phone-home2.jpg) no-repeat center center fixed;
+  //   -webkit-background-size: cover;
+  //   -moz-background-size: cover;
+  //   -o-background-size: cover;
+  //   background-size: cover;
+  // }
   
 
-  .bg-3 {
-    background: url(spree/frontend/phone-home3.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
+  // .bg-3 {
+  //   background: url(spree/frontend/phone-home3.jpg) no-repeat center center fixed;
+  //   -webkit-background-size: cover;
+  //   -moz-background-size: cover;
+  //   -o-background-size: cover;
+  //   background-size: cover;
+  // }
 
-  .bg-4 {
-    background: url(spree/frontend/phone-home4.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
+  // .bg-4 {
+  //   background: url(spree/frontend/phone-home4.jpg) no-repeat center center fixed;
+  //   -webkit-background-size: cover;
+  //   -moz-background-size: cover;
+  //   -o-background-size: cover;
+  //   background-size: cover;
+  // }
 
   .text-container2 {
     margin-left: 20px;

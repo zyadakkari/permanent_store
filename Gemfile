@@ -17,7 +17,7 @@ gem "puma", "~> 5.0"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
-
+gem "letter_opener", group: :development
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -108,4 +108,6 @@ gem "draper", "~> 4.0"
 
 gem 'dotenv-rails', groups: [:development, :test]
 
-gem "sidekiq", "~> 7.0"
+group :production do
+  gem "sidekiq", "~> 7.0"
+end

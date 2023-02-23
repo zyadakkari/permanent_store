@@ -11,7 +11,7 @@ Bundler.require(*Rails.groups)
 module PermanentStore
   class Application < Rails::Application
 
-    config.active_job.queue_adapter = :sidekiq
+    
 
     if defined?(FactoryBotRails)
       initializer after: "factory_bot.set_factory_paths" do

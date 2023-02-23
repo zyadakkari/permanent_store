@@ -252,6 +252,8 @@ GEM
       terrapin (~> 0.6.0)
     launchy (2.5.2)
       addressable (~> 2.8)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -557,6 +559,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   jbuilder
   jquery-rails (~> 4.4.0)
+  letter_opener
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4)

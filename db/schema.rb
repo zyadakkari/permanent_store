@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_07_112837) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_03_100539) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -1046,6 +1046,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_07_112837) do
     t.datetime "deleted_at", precision: nil
     t.datetime "starts_at", precision: nil
     t.datetime "expires_at", precision: nil
+    t.integer "level", default: 0, null: false
     t.index ["deleted_at"], name: "index_spree_tax_rates_on_deleted_at"
     t.index ["zone_id"], name: "index_spree_tax_rates_on_zone_id"
   end
@@ -1195,8 +1196,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_07_112837) do
     t.integer "tax_category_id"
     t.datetime "updated_at"
     t.datetime "created_at"
+    t.bigint "shipping_category_id"
     t.index ["position"], name: "index_spree_variants_on_position"
     t.index ["product_id"], name: "index_spree_variants_on_product_id"
+    t.index ["shipping_category_id"], name: "index_spree_variants_on_shipping_category_id"
     t.index ["sku"], name: "index_spree_variants_on_sku"
     t.index ["tax_category_id"], name: "index_spree_variants_on_tax_category_id"
     t.index ["track_inventory"], name: "index_spree_variants_on_track_inventory"

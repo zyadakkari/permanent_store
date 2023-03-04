@@ -10,7 +10,8 @@
 
 <div class="products--grid grid-cols-3">
   <% products.each do |product| %>
-
-    <%= render 'products/product-card', product: product %>
+    <% if product.stock_items.first.count_on_hand > 0 %>
+      <%= render 'products/product-card', product: product %>
+    <% end %>
   <% end %>
 </div>

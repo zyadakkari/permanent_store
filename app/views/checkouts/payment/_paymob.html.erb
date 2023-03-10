@@ -1,0 +1,27 @@
+<button id="pmb-button1"
+    data-order-id="<%= @order.id %>"
+    data-store-name="<%= @order.store.name %>"
+    data-amount-cents= "<%= @order.display_outstanding_balance.money.fractional %>"
+    data-order-number= "<%= @order.number %>"
+    data-order-token ="<%= @order.guest_token %>"
+    <% if @order.bill_address.name.split(" ").length > 1 %>
+        data-first-name="<%= @order.bill_address.name.split(" ").first %>"
+        data-last-name="<%= @order.bill_address.name.split(" ").last %>"
+    <% else %>
+        data-first-name="<%= @order.bill_address.name %>"
+        data-last-name="X"
+    <% end %>
+    data-email="<%= @order.email %>"
+    data-contact-number="<%= @order.bill_address.phone %>"
+    data-country-code="<%= Spree::Country.find(@order.bill_address.country_id).iso %>"
+    data-street-address="<%= @order.bill_address.address1 %>"
+    data-building-address="<%= @order.bill_address.address2 %>"
+    data-city-address="<%= @order.bill_address.city %>"
+    data-zip-code="<%= @order.bill_address.zipcode %>"
+    data-currency="<%= @order.currency %>"
+    # data-frontend="<%#= frontend %>"
+    data-success-callback-path="<%#= success_callback_path %>"
+>
+
+    <%= t('Pay with Paymob') %>
+</button>

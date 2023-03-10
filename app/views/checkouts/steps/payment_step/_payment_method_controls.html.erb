@@ -1,6 +1,6 @@
 <ul class="payment-method-controls">
   <% methods.each do |method| %>
-    <li id="payment_view_<%= method.id %>" class="payment-method-control-item">
+    <li id="payment_view_<%= method.id %>" class="payment-method-control-item" style="display: none;">
       <%= render(
         "checkouts/payment/#{method.partial_name}",
         payment_method: method

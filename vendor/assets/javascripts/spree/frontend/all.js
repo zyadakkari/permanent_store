@@ -6,6 +6,7 @@
 //
 //= require rails-ujs
 //= require_tree .
+
 window.addEventListener('load', function () {
     var loader = document.querySelector(".loader");
     loader.style.opacity = 0;
@@ -18,4 +19,5 @@ window.addEventListener('load', function () {
   function removeButtonAlert() {
     alert("Please edit the quantity to zero to remove the item");
   }
-  
+  //= require spree/frontend/solidus_pay_mob
+//= require spree/frontend/solidus_razorpay

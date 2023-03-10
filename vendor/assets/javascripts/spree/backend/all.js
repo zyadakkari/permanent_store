@@ -9,3 +9,5 @@
 //= require spree/backend
 //= require_tree .
 //= require spree/backend/solidus_paypal_commerce_platform
+//= require spree/backend/solidus_pay_mob
+//= require spree/backend/solidus_razorpay

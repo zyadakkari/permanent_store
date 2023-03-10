@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_03_100539) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_10_111428) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -86,6 +86,50 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_03_100539) do
     t.integer "paypal_funding_source"
   end
 
+  create_table "solidus_paymob_payment_sources", force: :cascade do |t|
+    t.integer "payment_method_id"
+    t.string "paymob_auth_token"
+    t.integer "paymob_order_id"
+    t.string "paymob_payment_token"
+    t.string "currency"
+    t.string "status"
+    t.integer "amount_refunded"
+    t.string "refund_status"
+    t.boolean "captured"
+    t.integer "amount"
+    t.boolean "international"
+    t.string "error_code"
+    t.string "error_description"
+    t.string "error_source"
+    t.string "error_step"
+    t.string "error_reason"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["payment_method_id"], name: "index_solidus_paymob_payment_sources_on_payment_method_id"
+  end
+
+  create_table "solidus_razorpay_payment_sources", force: :cascade do |t|
+    t.integer "payment_method_id"
+    t.string "razorpay_order_id", null: false
+    t.string "razorpay_payment_id"
+    t.string "currency"
+    t.string "method"
+    t.string "status"
+    t.integer "amount_refunded"
+    t.string "refund_status"
+    t.boolean "captured"
+    t.integer "amount"
+    t.boolean "international"
+    t.string "error_code"
+    t.string "error_description"
+    t.string "error_source"
+    t.string "error_step"
+    t.string "error_reason"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["payment_method_id"], name: "index_solidus_razorpay_payment_sources_on_payment_method_id"
+  end
+
   create_table "spree_addresses", id: :serial, force: :cascade do |t|
     t.string "firstname"
     t.string "lastname"
@@ -105,7 +149,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_03_100539) do
     t.index ["country_id"], name: "index_spree_addresses_on_country_id"
     t.index ["firstname"], name: "index_addresses_on_firstname"
     t.index ["lastname"], name: "index_addresses_on_lastname"
-    t.index ["name"], name: "index_spree_addresses_on_name"
     t.index ["state_id"], name: "index_spree_addresses_on_state_id"
   end
 
@@ -353,6 +396,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_03_100539) do
     t.integer "store_id"
     t.string "approver_name"
     t.boolean "frontend_viewable", default: true, null: false
+    t.string "razorpay_order_id"
     t.index ["approver_id"], name: "index_spree_orders_on_approver_id"
     t.index ["bill_address_id"], name: "index_spree_orders_on_bill_address_id"
     t.index ["completed_at"], name: "index_spree_orders_on_completed_at"

@@ -5,6 +5,8 @@
  *
  *= require_self
  *= require_tree .
+ *= require spree/frontend/solidus_pay_mob
+ *= require spree/frontend/solidus_razorpay
 */
 
 :root {

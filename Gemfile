@@ -111,3 +111,6 @@ gem 'dotenv-rails', groups: [:development, :test]
 group :production do
   gem "sidekiq", "~> 7.0"
 end
+
+gem 'solidus_pay_mob', path: '/Users/ZyadAkkari/sites/permanent_store/solidus_pay_mob'
+gem 'solidus_razorpay', git: 'https://github.com/solidusio-contrib/solidus_razorpay'

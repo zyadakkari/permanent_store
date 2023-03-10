@@ -21,6 +21,7 @@ Spree.config do |config|
 
 
   config.address_requires_state = false
+  # config.use_combined_first_and_last_name_in_address = false
 
 
   # Uncomment to stop tracking inventory levels in the application
